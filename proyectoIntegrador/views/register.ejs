@@ -17,14 +17,43 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
-				<h3> Register </h3>
 				<form action="GET" action="/users/register">
 					<label for="">Email</label>
 					<input type="text" email="email">
 				</form>
+			</h2>
+			<h2 class="col-12">
+				<form action="GET" action="/users/register">
+					<label for="">Usuario</label>
+					<input type="text" name="usuario">
+				</form>
 
 			</h2>
-		
+			<h2 class="col-12">
+				<form action="GET" action="/users/register">
+					<label for="">Contraseña</label>
+					<input type="password" password="contraseña">
+				</form>
+			</h2>		
+			<h2 class="col-12">
+				<form action="GET" action="/users/register">
+					<label for="">Fecha de Nacimiento</label>
+					<input type="date" date="Fecha de Nacimiento">
+				</form>
+			</h2>		
+			<h2 class="col-12">
+				<form action="GET" action="/users/register">
+					<label for="">Nro de documento</label>
+					<input type="number" numerico="numerico">
+				</form>
+			</h2>
+			<h2 class="col-12">
+				<form action="GET" action="/users/register">
+					<label for="">foto de perfil</label>
+					<input type="file" img="foto de perfil">
+				</form>
+			</h2>
+			
 
 	<!-- footer -->
 	<%- include('./partials/footer')  %> 

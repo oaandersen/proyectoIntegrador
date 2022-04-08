@@ -1,7 +1,10 @@
-const comentarios = require('../db/comentarios');
 
-const indexController = function(req, res) {
-    res.send('respond with a resource');
-  };
+const router = require('../routes/index');
 
+const indexController = {
+'index':function(req, res) {
+    res.render('index');
+  },
+
+}
   module.exports = indexController;

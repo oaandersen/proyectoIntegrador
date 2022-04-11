@@ -18,25 +18,26 @@
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
 				<form action="GET" action="/users/register">
-					<label for="">Email</label>
-					<input type="text" email="email">
-				</form> 
+					<div>
+						<label for="">Email</label>
+						<input type="text" email="email">
+					</div>
+					<div>
+						<label for="">Contraseña</label>
+						<input type="password" password="contraseña">
+					</div>
+					<div>
+						<label for="">Recordarme</label>
+						<input type="checkbox" checkbox="Recordarme">
+					</div>
+				</form>
+				<input type="submit" value="Login">
 			</h2>
-			<h2 class="col-12">
-				<form action="GET" action="/users/register">
-					<label for="">Contraseña</label>
-					<input type="password" password="contraseña">
-				</form>
-			</h2>	
-			<h2 class="col-12">
-				<form action="GET" action="/users/register">
-					<label for="">Recordarme</label>
-					<input type="checkbox" checkbox="Recordarme">
-				</form>
-			</h2>		
-			<!-- footer -->
-			<%- include('./partials/footer')  %>
-			<!-- /footer -->
+			<div>
+
+				<!-- footer -->
+				<%- include('./partials/footer')  %>
+				<!-- /footer -->
 </body>
 
 </html>

@@ -7,8 +7,10 @@ router.get('/', function(req, res) {
   res.send('respond with a resource');
 });
 
-router.get('/register', usersController.register)
+router.get('/register', usersController.register);
 
-router.get('/login', usersController.login)
+router.get('/login', usersController.login);
+
+
 
 module.exports = router;

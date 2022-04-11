@@ -1,12 +1,12 @@
 let data = {
 
     usuario: {
-        email: '',
-        usuario: '',
-        contraseña: '',
-        fechaNacimiento: '',
-        numeroDocumento: '',
-        fotoPerfil: '',
+        email: 'importsJON@gmail.com',
+        usuario: 'JON',
+        contraseña: '*******',
+        fechaNacimiento: '14/07/1998',
+        numeroDocumento: '44.982.193',
+        fotoPerfil: 'n/a',
 
     },
 

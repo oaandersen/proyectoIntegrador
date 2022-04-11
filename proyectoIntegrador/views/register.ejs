@@ -6,7 +6,7 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerDeslogeado')  %> 
+	<%- include('./partials/headerDeslogeado')  %>
 	<!-- /Header -->
 
 	<!-- Novedades -->
@@ -16,48 +16,45 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> 
-				<form action="GET" action="/users/register">
-					<label for="">Email</label>
-					<input type="text" email="email">
-				</form>
-			</h2>
 			<h2 class="col-12">
 				<form action="GET" action="/users/register">
-					<label for="">Usuario</label>
-					<input type="text" name="usuario">
-				</form>
+					<div>
+						<label for="Email">Email</label>
+						<input type="text" email="email">
+					</div>
 
-			</h2>
-			<h2 class="col-12">
-				<form action="GET" action="/users/register">
-					<label for="">Contraseña</label>
-					<input type="password" password="contraseña">
-				</form>
-			</h2>		
-			<h2 class="col-12">
-				<form action="GET" action="/users/register">
-					<label for="">Fecha de Nacimiento</label>
-					<input type="date" date="Fecha de Nacimiento">
-				</form>
-			</h2>		
-			<h2 class="col-12">
-				<form action="GET" action="/users/register">
-					<label for="">Nro de documento</label>
-					<input type="number" numerico="numerico">
-				</form>
-			</h2>
-				<h2 class="col-12">
-					<form action="GET" action="/users/register">
-						<label for="">foto de perfil</label>
+					<div>
+						<label for="Usuario">Usuario</label>
+						<input type="text" name="usuario">
+					</div>
+
+					<div>
+						<label for="Contraseña">Contraseña</label>
+						<input type="password" password="contraseña">
+					</div>
+
+					<div>
+						<label for="Fecha">Fecha de Nacimiento</label>
+						<input type="date" date="Fecha de Nacimiento">
+					</div>
+
+					<div>
+						<label for="documento">Numero de documento</label>
+						<input type="number" numerico="numerico">
+					</div>
+					<div>
+						<label for="fotoPerfil">Foto de perfil</label>
 						<input type="file" img="foto de perfil">
-					</form>
-				</h2>
-			
+					</div>
+				</form>
+				<input type="submit" value="Registrarse">
+				<p></p>
+				
+			</h2>
 
-	<!-- footer -->
-	<%- include('./partials/footer')  %> 
-	<!-- /footer -->
+			<!-- footer -->
+			<%- include('./partials/footer')  %>
+			<!-- /footer -->
 </body>
 
 </html>

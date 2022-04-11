@@ -4,7 +4,7 @@ const productsController = require('../controllers/productsController');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('product');
 });
 
 router.get('/product/productAdd', productsController.productAdd)

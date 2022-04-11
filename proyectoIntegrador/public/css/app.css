@@ -3,10 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&family=Noto+Serif&family=Tangerine:wght@700&display=swap');
 /*====== Variables ======*/
 :root {
-  --yellow: #898d89;
+  --yellow: #ffffff;
   --dark-blue: #ecf003;
-  --light-blue: #1a1b6b;
-  --gray: #1a1b6b;
+  --light-blue: #7e1010;
+  --gray: #9e0a0a;
   --light-gray: #898d89;
   --green: #39b54a;
   --base-font-family: 'Noto Sans', sans-serif
@@ -153,11 +153,11 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+  background-image: url(../images/Myproject2.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 100px;
+  height: 350px;
 }
 
 
@@ -485,7 +485,7 @@ textarea.form-input {
   }
 
   .banner {
-    height: 320px;
+    height: 400px;
   }
 
   .btn-toggle-navbar {

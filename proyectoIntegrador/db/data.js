@@ -70,65 +70,33 @@ let data = {
     comentarios: [{
             nombre: 'Juan',
             comentario: 'Una nave!',
-            imagenPerfil: '/images/users/usersDefault',
+            imagenPerfil: '/images/users/usersDefault.jpg',
 
         }, {
 
             nombre: 'Ramiro',
             comentario: 'El mejor lejos.',
-            imagenPerfil: '/images/users/usersDefault',
+            imagenPerfil: '/images/users/usersDefault.jpg',
 
         }, {
 
             nombre: 'Esteban',
             comentario: 'Espero algun dia poder probar uno.',
-            imagenPerfil: '/images/users/usersDefault',
+            imagenPerfil: '/images/users/usersDefault.jpg',
 
         }, {
 
             nombre: 'Gonzalo',
             comentario: 'Lo recomiendo, muy bueno.',
-            imagenPerfil: '/images/users/usersDefault',
+            imagenPerfil: '/images/users/usersDefault.jpg',
 
         }, {
 
             nombre: 'Santiago',
             comentario: 'Recomendable.',
-            imagenPerfil: '/images/users/usersDefault',
+            imagenPerfil: '/images/users/usersDefault.jpg',
 
-        }, {
-
-            nombre: 'Hernan',
-            comentario: 'Una experiencia unica!',
-            imagenPerfil: '/images/users/usersDefault',
-
-        }, {
-
-            nombre: 'Fernando',
-            comentario: 'Mucho lujo.',
-            imagenPerfil: '/images/users/usersDefault',
-
-        }, {
-
-            nombre: 'Lucas',
-            comentario: 'Excelente diseño.',
-            imagenPerfil: '/images/users/usersDefault',
-
-        }, {
-
-            nombre: 'Tomas',
-            comentario: 'Grandes prestaciones.',
-            imagenPerfil: '/images/users/usersDefault',
-
-        }, {
-
-            nombre: 'Daniel',
-            comentario: 'Lindo color!',
-            imagenPerfil: '/images/users/usersDefault',
-
-        }, {
-
-        }]
+        },]
     }
 
 

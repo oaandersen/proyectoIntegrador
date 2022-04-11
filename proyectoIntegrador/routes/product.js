@@ -1,10 +1,11 @@
 let express = require('express');
 let router = express.Router();
 const productsController = require('../controllers/productsController');
+const data = require('../db/data')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('product');
+router.get('/', function(req, res) {
+  res.render('product', {comentarios: data.comentarios});
 });
 
 router.get('/product/productAdd', productsController.productAdd)

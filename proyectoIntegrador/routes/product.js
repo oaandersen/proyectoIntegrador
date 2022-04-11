@@ -7,5 +7,5 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/productAdd', productsController.productAdd)
+router.get('/product/productAdd', productsController.productAdd)
 module.exports = router;

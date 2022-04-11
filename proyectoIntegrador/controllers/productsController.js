@@ -1,4 +1,4 @@
-const producto = require('../db/productos');
+const producto = require('../db/data');
 const router = require('../routes/product');
 
 const productsController = { 

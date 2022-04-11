@@ -1,4 +1,4 @@
-const usuario = require('../db/usuario');
+const usuario = require('../db/data');
 const router = require('../routes/users');
 
 const usersController = {

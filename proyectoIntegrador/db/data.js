@@ -6,7 +6,7 @@ let data = {
         contraseña: '*******',
         fechaNacimiento: '14/07/1998',
         numeroDocumento: '44.982.193',
-        fotoPerfil: 'n/a',
+        fotoPerfil: '/images/users/usersDefault',
 
     },
 
@@ -70,61 +70,61 @@ let data = {
     comentarios: [{
             nombre: 'Juan',
             comentario: 'Una nave!',
-            imagenPerfil: '',
+            imagenPerfil: '/images/users/usersDefault',
 
         }, {
 
             nombre: 'Ramiro',
             comentario: 'El mejor lejos.',
-            imagenPerfil: '',
+            imagenPerfil: '/images/users/usersDefault',
 
         }, {
 
             nombre: 'Esteban',
             comentario: 'Espero algun dia poder probar uno.',
-            imagenPerfil: '',
+            imagenPerfil: '/images/users/usersDefault',
 
         }, {
 
             nombre: 'Gonzalo',
             comentario: 'Lo recomiendo, muy bueno.',
-            imagenPerfil: '',
+            imagenPerfil: '/images/users/usersDefault',
 
         }, {
 
             nombre: 'Santiago',
             comentario: 'Recomendable.',
-            imagenPerfil: '',
+            imagenPerfil: '/images/users/usersDefault',
 
         }, {
 
             nombre: 'Hernan',
             comentario: 'Una experiencia unica!',
-            imagenPerfil: '',
+            imagenPerfil: '/images/users/usersDefault',
 
         }, {
 
             nombre: 'Fernando',
             comentario: 'Mucho lujo.',
-            imagenPerfil: '',
+            imagenPerfil: '/images/users/usersDefault',
 
         }, {
 
             nombre: 'Lucas',
             comentario: 'Excelente diseño.',
-            imagenPerfil: '',
+            imagenPerfil: '/images/users/usersDefault',
 
         }, {
 
             nombre: 'Tomas',
             comentario: 'Grandes prestaciones.',
-            imagenPerfil: '',
+            imagenPerfil: '/images/users/usersDefault',
 
         }, {
 
             nombre: 'Daniel',
             comentario: 'Lindo color!',
-            imagenPerfil: '',
+            imagenPerfil: '/images/users/usersDefault',
 
         }, {
 

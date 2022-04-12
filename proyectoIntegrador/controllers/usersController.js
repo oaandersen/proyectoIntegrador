@@ -9,9 +9,8 @@ const usersController = {
     res.render('login')
   },
   'profile': function (req, res) {
-    res.render('profile', {usuario: data.usuario} )
+    res.render('profile', {usuario: data.usuario, producto:data.producto})
   },
-  
 
 }
 module.exports = usersController;

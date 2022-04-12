@@ -2,8 +2,7 @@ const data = require('../db/data');
 const router = require('../routes/index');
 
 const indexController = {
-'index':function(req, res) {
-  console.log(data.data); 
+'index':function(req, res) { 
   res.render('index',{producto:data.producto});
   },
 

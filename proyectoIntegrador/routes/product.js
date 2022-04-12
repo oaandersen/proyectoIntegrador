@@ -4,7 +4,7 @@ const productsController = require('../controllers/productsController');
 const data = require('../db/data')
 
 /* GET home page. */
-router.get('/', function(req, res) {
+router.get('/:id', function(req, res) {
   res.render('product', {comentarios: data.comentarios});
 });
 

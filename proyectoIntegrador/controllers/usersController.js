@@ -1,4 +1,4 @@
-const usuario = require('../db/data');
+const data = require('../db/data');
 const router = require('../routes/users');
 
 const usersController = {
@@ -7,6 +7,9 @@ const usersController = {
   },
   'login': function (req, res) {
     res.render('login')
+  },
+  'profile': function (req, res) {
+    res.render('profile', {usuario: data.usuario} )
   },
   
 

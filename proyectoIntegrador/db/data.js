@@ -6,7 +6,7 @@ let data = {
         contraseña: '*******',
         fechaNacimiento: '14/07/1998',
         numeroDocumento: '44.982.193',
-        fotoPerfil: '/images/users/usersDefault',
+        fotoPerfil: '/images/users/usersDefault.jpg',
 
     },
 

@@ -13,6 +13,10 @@
 }
 
 
+
+
+
+
 /*====== Basics ======*/
 * {
   box-sizing: border-box;
@@ -67,7 +71,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color: rgb(185, 185, 185);
 }
 
 .main-header_home-link,
@@ -149,8 +153,26 @@ hr {
   border-bottom: solid 1px var(--gray);
 }
 
+/*===== Register =====*/
+
+.formulario-users{
+  text-align: left;
 
 
+  
+}
+
+.div-users{
+  margin-top: 20px;
+}
+/* 
+.label-users{
+  
+}
+.input-users{
+
+}
+*/
 /*====== Banner ======*/
 .banner {
   background-image: url(../images/Myproject2.png);
@@ -169,17 +191,20 @@ hr {
 
 .products-title {
   font-family: 'Noto Serif', serif ;
-  font-size: 2.4em;
+  font-size: 2.8em;
   font-weight: 400;
   color: var(--gray);
+  
 }
 
 .product-box {
-  background-color: #ffffff;
-  border-radius: 5px;
+  background-color: #e6e0d9;
+  border-radius: 3px;
   overflow: hidden;
   transition: 300ms;
   margin: 20px 0;
+  padding: 3px;
+  min-height: 275px;
 }
 
 .product-box a {
@@ -259,7 +284,7 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: #ffffff;
+  background-color: rgb(185, 185, 185);
   padding: 20px 0;
   margin-top: 80px;
 }

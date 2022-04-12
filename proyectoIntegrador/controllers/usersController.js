@@ -11,6 +11,8 @@ const usersController = {
   'profile': function (req, res) {
     res.render('profile', {usuario: data.usuario, producto:data.producto})
   },
-
+  'profileEdit': function (req, res) {
+    res.render('profileEdit')
+  },
 }
 module.exports = usersController;

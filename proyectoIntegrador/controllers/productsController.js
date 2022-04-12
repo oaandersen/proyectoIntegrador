@@ -1,5 +1,4 @@
-const { urlencoded } = require('express');
-const producto = require('../db/data');
+const data = require('../db/data');
 const router = require('../routes/product');
 
 const productsController = { 

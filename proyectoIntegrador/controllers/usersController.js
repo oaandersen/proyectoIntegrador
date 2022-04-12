@@ -12,7 +12,7 @@ const usersController = {
     res.render('profile', {usuario: data.usuario, producto:data.producto})
   },
   'profileEdit': function (req, res) {
-    res.render('profileEdit')
+    res.render('profileEdit',  {usuario: data.usuario})
   },
 }
 module.exports = usersController;

@@ -1,10 +1,12 @@
 const data = require('../db/data');
 const router = require('../routes/product');
 
-const productsController = { 
-  'product': function (req, res){
-    res.render('product', {comentarios: data.comentarios});
-    
+const productsController = {
+  'product': function (req, res) {
+    res.render('product', {
+      comentarios: data.comentarios
+    });
+
   },
   'productAdd': function (req, res) {
     res.render('productAdd');
@@ -12,4 +14,4 @@ const productsController = {
 
 }
 
-  module.exports = productsController;
+module.exports = productsController;

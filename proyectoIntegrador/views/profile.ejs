@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-<%- include('./partials/head')  %> 
+<%- include('./partials/head')  %>
+
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerLogeado')  %> 
+	<%- include('./partials/headerLogeado')  %>
 	<!-- /Header -->
 
 	<!-- Datos del usuario -->
@@ -46,7 +47,7 @@
 				<section class="product-box">
 					<a href="/product/1">
 						<figure class="product-box_image">
-							<img src="<%=producto[i].imagen %>" alt="cafetera moulinex">
+							<img src="<%=producto[i].imagen %>" alt="<%=producto[i].nombreProducto %>">
 						</figure>
 						<article class="product-box_data">
 							<h2><%=producto[i].nombreProducto %></h2>
@@ -64,7 +65,8 @@
 
 
 	<!-- footer -->
-	<%- include('./partials/footer')  %> 
-	<!-- /footer -->
-</body>	
+	<%- include('./partials/footer')  %>
+			<!-- /footer -->
+</body>
+
 </html>

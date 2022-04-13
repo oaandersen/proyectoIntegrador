@@ -9,10 +9,15 @@ const usersController = {
     res.render('login')
   },
   'profile': function (req, res) {
-    res.render('profile', {usuario: data.usuario, producto:data.producto})
+    res.render('profile', {
+      usuario: data.usuario,
+      producto: data.producto
+    })
   },
   'profileEdit': function (req, res) {
-    res.render('profileEdit',  {usuario: data.usuario})
+    res.render('profileEdit', {
+      usuario: data.usuario
+    })
   },
 }
 module.exports = usersController;

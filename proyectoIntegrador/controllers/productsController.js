@@ -1,5 +1,4 @@
 const data = require('../db/data');
-const router = require('../routes/product');
 
 const productsController = {
   'product': function (req, res) {
@@ -9,7 +8,9 @@ const productsController = {
 
   },
   'productAdd': function (req, res) {
-    res.render('productAdd');
+    res.render('productAdd', {
+      usuario: data.usuario
+    });
   }
 
 }

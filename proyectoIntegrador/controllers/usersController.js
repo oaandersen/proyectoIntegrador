@@ -1,5 +1,4 @@
 const data = require('../db/data');
-const router = require('../routes/users');
 
 const usersController = {
   'register': function (req, res) {

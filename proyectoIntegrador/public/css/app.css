@@ -519,7 +519,9 @@ textarea.form-input {
   color: #fff;
 }
 
-
+.boton-profile-edit{
+  color: blue;
+}
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
   .main-header_credit-link {

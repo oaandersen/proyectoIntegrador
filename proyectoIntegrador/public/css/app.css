@@ -33,6 +33,9 @@ body {
   font-family: var(--base-font-family);
   font-weight: 300;
   background-color: var(--light-gray);
+  background-image: url(../images/imagenFondo.jpeg);
+  background-size: contain;
+  background-repeat: repeat;
 }
 
 ul,
@@ -60,6 +63,8 @@ img {
 input,
 textarea {
   font-family: inherit;
+  background-color: black;
+  color: white;
 }
 
 hr {
@@ -157,13 +162,17 @@ hr {
 
 .formulario-users{
   text-align: left;
+  border-radius: 25px;
+  padding: 10px;
+  border: 5px solid darkred;
+  backdrop-filter: blur(10px);
 
 
-  
 }
 
 .div-users{
-  margin-top: 20px;
+  margin: 20px;
+  color: white;
 }
 /* 
 .label-users{
@@ -191,14 +200,17 @@ hr {
 
 .products-title {
   font-family: 'Noto Serif', serif ;
-  font-size: 2.8em;
+  font-size: 50px;
   font-weight: 400;
   color: var(--gray);
+  text-align: center;
   
 }
 
 .product-box {
   background-color: #e6e0d9;
+  background-image: linear-gradient(180deg, black,black, red);
+  background-size: auto;
   border-radius: 3px;
   overflow: hidden;
   transition: 300ms;
@@ -232,6 +244,7 @@ hr {
   font-size: 2.4em;
   font-weight: 300;
   margin: 0;
+  color: white;
 }
 
 .product-box_data span {
@@ -244,7 +257,7 @@ hr {
 .product-box_data p {
   font-size: 1.35em;
   width: 100%;
-  color: var(--gray);
+  color: white;
   margin: 0;
   height: 0;
   transition: 300ms;

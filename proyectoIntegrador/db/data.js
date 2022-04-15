@@ -6,7 +6,7 @@ let data = {
         contraseña: '*******',
         fechaNacimiento: '14/07/1998',
         numeroDocumento: '44.982.193',
-        fotoPerfil: '/images/users/usersDefault.jpg',
+        fotoPerfil: '/images/users/perfil.jpg',
 
     },
 
@@ -67,33 +67,33 @@ let data = {
 
     }],
     comentarios: [{
-        nombre: 'Juan',
+        nombre: 'John',
         comentario: 'Una nave!',
-        imagenPerfil: '/images/users/usersDefault.jpg',
+        imagenPerfil: '/images/users/perfil.jpg',
 
     }, {
 
-        nombre: 'Ramiro',
+        nombre: 'Tom',
         comentario: 'El mejor lejos.',
-        imagenPerfil: '/images/users/usersDefault.jpg',
+        imagenPerfil: '/images/users/perfil1.jpg',
 
     }, {
 
-        nombre: 'Esteban',
+        nombre: 'Brad',
         comentario: 'Espero algun dia poder probar uno.',
-        imagenPerfil: '/images/users/usersDefault.jpg',
+        imagenPerfil: '/images/users/perfil2.jpg',
 
     }, {
 
-        nombre: 'Gonzalo',
+        nombre: 'Will',
         comentario: 'Lo recomiendo, muy bueno.',
-        imagenPerfil: '/images/users/usersDefault.jpg',
+        imagenPerfil: '/images/users/perfil3.jpg',
 
     }, {
 
-        nombre: 'Santiago',
+        nombre: 'Leo',
         comentario: 'Recomendable.',
-        imagenPerfil: '/images/users/usersDefault.jpg',
+        imagenPerfil: '/images/users/perfil4.jpg',
 
     }, ]
 }

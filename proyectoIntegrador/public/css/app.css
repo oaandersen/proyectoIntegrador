@@ -513,14 +513,14 @@ textarea.form-input {
 }
 
 .btn{
-  background-color: #1259c3;
+  background-color: #c31212;
   padding: 10px 20px;
   border-radius: 4px;
   color: #fff;
 }
 
 .boton-profile-edit{
-  color: blue;
+  color: #c31212;
 }
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
@@ -572,4 +572,24 @@ textarea.form-input {
     width: 95%;
     margin: auto;
   }
+}
+/*========= Correcciones =========*/
+.data-container {
+  color: white;
+}
+.botonesVarios {
+  height: 40px;
+  width: 100px;
+  font-size: larger;
+  margin: 20px;
+}
+.productAdd h2 {
+  color: white;
+}
+.productAdd {
+  border-radius: 25px;
+  padding: 10px;
+  border: 5px solid darkred;
+  backdrop-filter: blur(10px);
+  padding-right: 180px;
 }

@@ -13,7 +13,7 @@ const usersController = {
       producto: data.producto
     })
   },
-  'profileEdit': function (req, res) {
+  profileEdit: function (req, res) {
     res.render('profileEdit', {
       usuario: data.usuario
     })

@@ -4,7 +4,7 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 const session = require('express-session');
-const db = require('./db')
+const db = require('./database/models') // 'db'
 
 const indexRouter = require('./routes/index');
 const productsRouter = require('./routes/product');
@@ -17,8 +17,17 @@ let app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(session({secret: "myApp",
-resave: false,
+
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+  secret: "myApp",
+  resave: false,
 saveUninitialized:true
 }));
 app.use(function(req,res,next){
@@ -38,20 +47,13 @@ req.sessinon.user = user.dataValues;
 res.locals.user = user.dataValues;
 return next();
 }).catch((err)=>{
-
+console.log(err);
 });
   } else {
-
+return next()
   }
-})
+});
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({
-  extended: false
-}));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/product', productsRouter);
 app.use('/users', usersRouter);

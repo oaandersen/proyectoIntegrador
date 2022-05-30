@@ -2,7 +2,7 @@ const data = require('../database/models');
 const product = data.Producto;
 
 const productsController = {
-/*  product: function (req, res) {
+  product: function (req, res) {
     res.render('product', {
       comentarios: data.comentarios
   }); 
@@ -12,8 +12,8 @@ const productsController = {
     res.render('productAdd', {
       usuario: data.usuario
     });
-  }
-*/
+  },
+
 findAll: (req, res) => {
 
   let counter = req.session.contador;

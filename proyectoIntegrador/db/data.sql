@@ -1,32 +1,32 @@
 
 USE producto;
 
-CREATE TABLE vehiculo (
+CREATE TABLE vehicles (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-imagen			    VARCHAR(300)		    	,
-marca				    VARCHAR(50)		NOT NULL,
-modelo		    	VARCHAR(50)		NOT NULL,
-variante		    VARCHAR(50)	    			,
-anio				    INT			     	NOT NULL,
-descripcion	    VARCHAR(50)		NOT NULL,
-fechaCarga	    DATE    			NOT NULL
+image		    VARCHAR(300)	    	,
+brand			VARCHAR(50)		NOT NULL,
+model		    VARCHAR(50)		NOT NULL,
+variant		    VARCHAR(50)	    		,
+year		    INT		     	NOT NULL,
+description	    VARCHAR(50)		NOT NULL,
+upload_date	    DATE    		NOT NULL
 );
 
-CREATE TABLE usuario (
+CREATE TABLE user (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-email 				  VARCHAR(50) NOT NULL,
-usuario 			  VARCHAR(50) NOT NULL,
-contrasenia 		VARCHAR(50) NOT NULL,
-fecha_nacimiento 	DATE 			NOT NULL,
-numero_documento 	INT 			NOT NULL,
-foto_perfil 		VARCHAR(500) 	
+email 			VARCHAR(50) 	NOT NULL,
+user 			VARCHAR(50) 	NOT NULL,
+password 		VARCHAR(50) 	NOT NULL,
+birth_date 		DATE 			NOT NULL,
+dni 			INT 			NOT NULL,
+profile_img 	VARCHAR(500) 	
 );
 
-CREATE TABLE comentarios (
+CREATE TABLE comments (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-nombre 			  	VARCHAR(50) 	NOT NULL,
-comentario 			VARCHAR(50) 	NOT NULL,
-foto_perfil			VARCHAR(500) 	
+name 			  	VARCHAR(50) 	NOT NULL,
+comment 			VARCHAR(50) 	NOT NULL,
+profile_img			VARCHAR(500) 	
 );
 
 INSERT INTO `` (`id`,`image`,`brand`,`model`,`variant`,`year`,`description`,`upload_date`) VALUES (1,'llll','Alfa Romeo','4C','Spider 33 Stradale Tributo',2020,'Ninguna','2022-06-06');

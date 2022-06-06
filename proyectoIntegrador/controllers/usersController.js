@@ -59,7 +59,7 @@ const usersController = {
 
     },
     register : (req, res) => {
-        return res.render("registerUser",);
+        return res.render("register");
     },
     procesarRegister : (req, res) => {
         let info = req.body;
@@ -67,13 +67,15 @@ const usersController = {
         let imgPerfil = req.file.filename;
 
         let userParaGuardar = {
-            name : info.name,
-            email : info.email,
-            password : passEncriptada,
-            remember_token: "false",
-            created_at : new Date(),
-            updated_at : new Date(),
-            img : imgPerfil
+          created_at : new Date(),
+          updated_at : new Date(),
+          name : info.name,
+          email : info.email,
+          password : passEncriptada,
+          date : info.date,
+          dni : info.dni, 
+          remember_token: "false",
+          img : imgPerfil
         }
 
         user.create(userParaGuardar)

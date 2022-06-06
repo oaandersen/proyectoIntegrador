@@ -15,10 +15,10 @@ upload_date	  DATE    		  NOT NULL
 
 CREATE TABLE user (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-email 			  VARCHAR(50) 	NOT NULL,
-user 		  	  VARCHAR(50) 	NOT NULL,
+user 	 		  VARCHAR(50) 	NOT NULL,
+email	  	      VARCHAR(50) 	NOT NULL,
 password 		  VARCHAR(50) 	NOT NULL,
-birth_date 	  DATE 		    	NOT NULL,
+date	  DATE 		    	NOT NULL,
 dni 		  	  INT           NOT NULL,
 profile_img   VARCHAR(500) 	
 );

@@ -1,33 +1,34 @@
-USE proyectointegrador;
 
-/* Creamos tabla usuarios */
-CREATE TABLE usuarios (
-/*	nombreColumna		tipoDato		Restricciones*/
-	  id	INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    nombre 			    VARCHAR(50)			NOT NULL,
-    apellido 		    VARCHAR(50)			NOT NULL,
-    email 			    VARCHAR(50)			NOT NULL,
-    usuario 		    VARCHAR(50)			NOT NULL,
-    contrasenia 	    VARCHAR(50)			NOT NULL,
-    fechaNacimiento	DATE 			    	NOT NULL,
-    numeroDocumento	INT 			    	NOT NULL,
-    foto			    VARCHAR(300)		
+USE producto;
+
+CREATE TABLE vehiculo (
+id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+imagen			    VARCHAR(300)		    	,
+marca				    VARCHAR(50)		NOT NULL,
+modelo		    	VARCHAR(50)		NOT NULL,
+variante		    VARCHAR(50)	    			,
+anio				    INT			     	NOT NULL,
+descripcion	    VARCHAR(50)		NOT NULL,
+fechaCarga	    DATE    			NOT NULL
 );
 
-/* Creamos tabla productos */
-CREATE TABLE `proyectointegrador`.`producto` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `img` VARCHAR(45) NULL,
-  `nombre_producto` VARCHAR(100) NULL,
-  `descripcion` VARCHAR(300) NULL,
-  `fecha_carga` DATE NOT NULL,
-  PRIMARY KEY (`id`));
+CREATE TABLE usuario (
+id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+email 				  VARCHAR(50) NOT NULL,
+usuario 			  VARCHAR(50) NOT NULL,
+contrasenia 		VARCHAR(50) NOT NULL,
+fecha_nacimiento 	DATE 			NOT NULL,
+numero_documento 	INT 			NOT NULL,
+foto_perfil 		VARCHAR(500) 	
+);
 
+CREATE TABLE comentarios (
+id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+nombre 			  	VARCHAR(50) 	NOT NULL,
+comentario 			VARCHAR(50) 	NOT NULL,
+foto_perfil			VARCHAR(500) 	
+);
 
-CREATE TABLE `proyectointegrador`.`comentarios` (
-  `id` INT NOT NULL AUTO_INCREMENT, 
-  `nombre` VARCHAR(50) NULL,
-  `comentario` VARCHAR(300) NULL,
-  `img_perfil` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`));
-/* Script de carga */
+INSERT INTO `` (`id`,`image`,`brand`,`model`,`variant`,`year`,`description`,`upload_date`) VALUES (1,'llll','Alfa Romeo','4C','Spider 33 Stradale Tributo',2020,'Ninguna','2022-06-06');
+INSERT INTO `` (`id`,`name`,`comment`,`profile_img`) VALUES (1,'Usuario Prueba','Este comentario es una prueba','lll');
+INSERT INTO `` (`id`,`email`,`user`,`password`,`birth_date`,`dni`,`profile_img`) VALUES (1,'usuarioprueba@gmail.com','Usuario Prueba','contraseniaprueba','2001-01-01',44444444,NULL);

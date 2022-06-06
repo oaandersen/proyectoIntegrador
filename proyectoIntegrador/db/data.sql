@@ -30,10 +30,10 @@ comment 			VARCHAR(50) 	NOT NULL,
 profile_img		VARCHAR(500) 	
 );
 /* Inserts users */
-INSERT INTO `` (`id`,`email`,`user`,`password`,`birth_date`,`dni`,`profile_img`) VALUES (1,'usuarioprueba@gmail.com','Usuario Prueba','contraseniaprueba','2001-01-01',44444444,NULL);
+INSERT INTO `user` (`id`,`email`,`user`,`password`,`birth_date`,`dni`,`profile_img`) VALUES (1,'usuarioprueba@gmail.com','Usuario Prueba','contraseniaprueba','2001-01-01',44444444,NULL);
 
 /* Inserts vehicles */
-INSERT INTO `` (`id`,`image`,`brand`,`model`,`variant`,`year`,`description`,`upload_date`) VALUES (1,'llll','Alfa Romeo','4C','Spider 33 Stradale Tributo',2020,'Ninguna','2022-06-06');
+INSERT INTO `vehicles` (`id`,`image`,`brand`,`model`,`variant`,`year`,`description`,`upload_date`) VALUES (1,'llll','Alfa Romeo','4C','Spider 33 Stradale Tributo',2020,'Ninguna','2022-06-06');
 
 /* Inserts comments */
-INSERT INTO `` (`id`,`name`,`comment`,`profile_img`) VALUES (1,'Usuario Prueba','Este comentario es una prueba','lll');
+INSERT INTO `comments` (`id`,`name`,`comment`,`profile_img`) VALUES (1,'Usuario Prueba','Este comentario es una prueba','lll');

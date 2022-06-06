@@ -8,7 +8,10 @@
 	<!-- Header -->
 	<%- include('./partials/headerDeslogeado')  %>
 	<!-- /Header -->
-
+	<% if(locals.erroresLogin){ %>
+		<p class="mensajeError" style="color: red;"> <%= erroresLogin.message %>
+		</p>
+	<% } %>
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
@@ -17,21 +20,22 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
-				<form action="GET" action="/users/register" class="formulario-users">
+				<form class="formulario-users" action="/users/login" method="POST">
 					<div class="div-users">
-						<label for="Email">Email</label>
-						<input class="input-users" type="text" email="email">
+						<label for="email">Email</label>
+						<input id="password" class="input-users" type="email" name="email" >
 					</div>
 					<div class="div-users">
-						<label for="Contraseña">Contraseña</label>
-						<input class="input-users" type="password" password="contraseña">
+						<label for="password">Contraseña</label>
+						<input id="password" class="input-users" type="password" name="password" placeholder="Clave">
 					</div>
 					<div class="div-users">
-						<label for="Recordarme">Recordarme</label>
-						<input class="input-users" type="checkbox" checkbox="Recordarme">
+						<label for="remember">Recordarme</label>
+						<input id="remember" class="input-users" type="checkbox" name="remember">
 					</div>
+					<button class="div-users, botonesVarios" type="text" class="submit">submit</button>
 				</form>
-				<input type="submit" value="Login" class="div-users, botonesVarios">
+			<!--	<input type="submit" value="Login" class="div-users, botonesVarios"> -->
 
 			</h2>
 			<div>

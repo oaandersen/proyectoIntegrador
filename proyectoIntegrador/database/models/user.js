@@ -25,6 +25,12 @@ module.exports = function (sequelize, dataTypes){
         password: {
             type: dataTypes.STRING
         },
+        date: {
+            type: dataTypes.DATE
+        },
+        dni: {
+            type: dataTypes.INTEGER
+        },
         remember_token: {
             type: dataTypes.STRING
         },

@@ -8,7 +8,10 @@
 	<!-- Header -->
 	<%- include('./partials/headerDeslogeado')  %>
 	<!-- /Header -->
-
+    <% if(locals.erroresLogin){ %>
+		<p class="mensajeError" style="color: red;"> <%= erroresLogin.message %>
+		</p>
+	<% } %>
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
@@ -17,37 +20,37 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
-				<form class="formulario-users" action="GET" action="/users/register">
+				<form class="formulario-users" method="POST" action="/users/register" enctype="multipart/form-data">
 					<div class="div-users">
-						<label class="label-users" for="Email">Email</label>
-						<input class="input-users" type="text" email="email">
+						<label class="label-users" for="name">Nombre</label>
+						<input id="name" class="input-users" type="text" name="name" placeholder="name">
 					</div>
 
 					<div class="div-users">
-						<label class="label-users" for="Usuario">Usuario</label>
-						<input class="input-users" type="text" name="usuario">
+						<label class="label-users" for="email">Email</label>
+						<input id="email" class="input-users" type="email" name="email" placeholder="email">
+					</div>
+					<div class="div-users">
+						<label class="label-users" for="password">Contraseña</label>
+						<input id="password" class="input-users" type="password" name="password" placeholder="Clave">
 					</div>
 
-					<div class="div-users">
-						<label class="label-users" for="Contraseña">Contraseña</label>
-						<input class="input-users" type="password" password="contraseña">
-					</div>
+						<div class="div-users">
+							<label class="label-users" for="date">Fecha de Nacimiento</label>
+							<input id="date" class="input-users" name="date" type="date">
+						</div>
 
+						<div class="div-users">
+							<label class="label-users" for="documento">Numero de documento</label>
+							<input id="documento" class="input-users" name="dni" type="number">
+						</div>
 					<div class="div-users">
-						<label class="label-users" for="Fecha">Fecha de Nacimiento</label>
-						<input class="input-users" type="date" date="Fecha de Nacimiento">
+						<label class="label-users" for="imgPerfil">Foto de perfil</label>
+						<input id="imgPerfil" class="input-users" type="file" name="imgPerfil">
 					</div>
-
-					<div class="div-users">
-						<label class="label-users" for="documento">Numero de documento</label>
-						<input class="input-users" type="number" numerico="numerico">
-					</div>
-					<div class="div-users">
-						<label class="label-users" for="fotoPerfil">Foto de perfil</label>
-						<input class="input-users" type="file" img="foto de perfil">
-					</div>
+					<button type="text" class="submit">submit</button>
 				</form>
-				<input class="div-users, botonesVarios" type="submit" value="Registrarse">
+			<!--	<input class="div-users, botonesVarios" type="submit" value="Registrarse"> -->
 				<p></p>
 
 			</h2>

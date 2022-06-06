@@ -1,5 +1,6 @@
+CREATE SCHEMA proyecto_db;
 
-USE producto;
+USE proyecto_db;
 
 CREATE TABLE vehicles (
 id INT UNSIGNED PRIMARY KEY  AUTO_INCREMENT,

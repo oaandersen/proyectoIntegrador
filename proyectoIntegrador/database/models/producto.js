@@ -7,7 +7,27 @@ module.exports = function (sequelize, dataTypes) {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER,
+        },       image:{
+            type: dataTypes.STRING
         },
+        brand:{
+            type: dataTypes.STRING
+        },
+        model:{
+            type: dataTypes.STRING
+        },
+        variant:{
+            type: dataTypes.STRING
+        },
+        year:{
+            type: dataTypes.INTEGER
+        },
+        description:{
+            type: dataTypes.STRING
+        },
+        upload_date:{
+            type: dataTypes.DATE
+        }
     }
 
     let config = {

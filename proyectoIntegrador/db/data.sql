@@ -26,8 +26,20 @@ profile_img   VARCHAR(500)
 CREATE TABLE comments (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 name 			  	VARCHAR(50) 	NOT NULL,
+user_id				INT				UNSIGNED,
+product_id 			INT				UNSIGNED,
 comment 			VARCHAR(50) 	NOT NULL,
-profile_img		VARCHAR(500) 	
+profile_img		VARCHAR(500) ,
+FOREIGN KEY (user_id) REFERENCES user(id),
+FOREIGN KEY (vehicle_id) REFERENCES vehicle(id)
+);
+
+CREATE TABLE followers(
+id 	INT	UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+user_id_follower	INT 		UNSIGNED,
+user_id_followed	INT			UNSIGNED,
+FOREIGN KEY (user_id_follower) REFERENCES user(id),
+FOREIGN KEY (user_id_followed) REFERENCES user(id)
 );
 /* Inserts users */
 INSERT INTO user (id, email, user, password, date, dni, profile_img) 

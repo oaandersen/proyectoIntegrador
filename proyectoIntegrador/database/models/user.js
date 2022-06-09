@@ -8,15 +8,7 @@ module.exports = function (sequelize, dataTypes){
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        created_at : {
-            type: dataTypes.DATE,
-            allowNull:true,
-        },
-        updated_at: {
-            type: dataTypes.DATE,
-            allowNull: true,
-        },
-        name: {
+        user: {
             type: dataTypes.STRING
         },
         email: {
@@ -31,18 +23,15 @@ module.exports = function (sequelize, dataTypes){
         dni: {
             type: dataTypes.INTEGER
         },
-        remember_token: {
-            type: dataTypes.STRING
-        },
-        img: {
+        profile_img: {
             type: dataTypes.STRING
         }
 
     }
 
     let config = {
-        tableName : "users",
-        timestamps:true, 
+        tableName : "user",
+        timestamps: false, 
         underscored: true, 
     };
 

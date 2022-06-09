@@ -45,7 +45,7 @@ const usersController = {
                         res.cookie('userId', req.session.user.id, { maxAge : 1000 * 60 * 5})
                     }
                    
-                    return res.redirect("/movies/all")
+                    return res.redirect("/")
                 } else {
                     return res.send("Existe el mail " + result.email + " pero la clave es incorrecta")
                 }
@@ -80,7 +80,7 @@ const usersController = {
 
         user.create(userParaGuardar)
         .then((result) => {
-            return res.redirect("/users/login")
+            return res.redirect("/")
         })
         
     }

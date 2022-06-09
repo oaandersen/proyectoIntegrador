@@ -85,7 +85,7 @@ store: function (req, res) {
     product
   )
     .then((result) => {
-      return res.redirect("/product/all")
+      return res.redirect("/")
     })
 },
 edit: (req, res) => {
@@ -134,7 +134,7 @@ destroy:(req,res)=>{
     }
   )
   .then((result)=>{
-    return res.redirect("/product/all")
+    return res.redirect("/")
   })
 }
 };

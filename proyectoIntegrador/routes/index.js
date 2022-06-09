@@ -8,3 +8,4 @@ router.get('/', indexController.index)
 
 router.get('/searchResults', indexController.searchResults)
 module.exports = router;
+

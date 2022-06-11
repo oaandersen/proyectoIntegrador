@@ -47,7 +47,7 @@ VALUES (1, 'usuarioprueba@gmail.com','Usuario Prueba', 'contra','2001-01-01', 44
 
 /* Inserts producto */
 INSERT INTO producto (id,image,brand,model,variant,year,description,upload_date) 
-VALUES (1,'llll','Alfa Romeo','4C','Spider 33 Stradale Tributo',2020,'Ninguna','2022-06-06');
+VALUES (1,'../public/images/products/Alfa-Romeo-4C-Spider-33 Stradale Tributo.jpeg','Alfa Romeo','4C','Spider 33 Stradale Tributo',2020,'Ninguna','2022-06-06');
 
 INSERT INTO proyecto_db.producto (id, image, brand, model, year, description, upload_date) 
 VALUES ('2', 'llll', 'Aston Martin', 'Valhalla', '2022', 'Ninguna', '2022-06-08');

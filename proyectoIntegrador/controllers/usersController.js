@@ -21,7 +21,7 @@ const user = data.User;
   },
 } */
 /* Requiriendo el modulo de bcryptjs .. */
-const bcryptjs = require("bcryptjs");
+const bcrypt = require("bcryptjs");
 
 const usersController = {
     login : (req, res) => {
@@ -63,7 +63,7 @@ const usersController = {
     },
     procesarRegister : (req, res) => {
         let info = req.body;
-        let passEncriptada = bcryptjs.hashSync(info.password, 10);
+        let passEncriptada = bcrypt.hashSync(info.password, 10);
         let imgPerfil = req.file.filename;
 
         let userParaGuardar = {

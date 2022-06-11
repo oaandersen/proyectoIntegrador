@@ -51,7 +51,7 @@ const usersController = {
                 }
                 
             } else {
-                return res.send("No xiste el mail " + info.email) 
+                return res.send("No existe el mail " + info.email) 
             }
         });
 

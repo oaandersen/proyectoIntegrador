@@ -1,7 +1,7 @@
 const data = require('../database/models');
-const index = data.Producto
+const index = data.Producto;
 const indexController = {
-  index: function (req, res) {
+index: function (req, res) {
     res.render('index', {
       producto: data.producto
     });
@@ -10,6 +10,7 @@ const indexController = {
     res.render('searchResults')
   },
 
+/*
   findAll: (req, res) => {
 
     let counter = req.session.contador;
@@ -21,7 +22,7 @@ const indexController = {
   
     req.session.contador = counter;
   
-    product
+    index
       .findAll({
       })
       .then((result) => {
@@ -43,7 +44,7 @@ const indexController = {
         genre_id: result.genre_id,
       }
       return res.render("product", {
-        product: product,
+        index: product,
       });
     });
   },
@@ -133,6 +134,7 @@ const indexController = {
       return res.redirect("/")
     })
   }
-}
+  */
+};
 
 module.exports = indexController;

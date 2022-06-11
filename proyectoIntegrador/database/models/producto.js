@@ -7,7 +7,8 @@ module.exports = function (sequelize, dataTypes) {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER,
-        },       image:{
+        },
+        image:{
             type: dataTypes.STRING
         },
         brand:{
@@ -37,9 +38,12 @@ module.exports = function (sequelize, dataTypes) {
     };
 
     const producto = sequelize.define(alias, cols, config); // definiendo el modelo
-    /* producto.associate = function(modelos){
-        producto.belongsTo(); // la parte que representa a 1.
-        producto.hasMany(); // La parte que representa a muchos.
-    }*/
+   
+    producto.associate = function(modelos){
+        producto.hasMany(models.Comments,{
+            as: "commentsProduct",
+            foreignKey: "product_id"
+        }); 
+    }
     return producto;
 }

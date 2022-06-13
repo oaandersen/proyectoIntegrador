@@ -62,7 +62,7 @@ const usersController = {
         return res.render("register");
     },
     procesarRegister : (req, res) => {
-        let info = req.body;
+        let info = req.body; //Captura todos los inputs guardados en el formulario
         let passEncriptada = bcrypt.hashSync(info.password, 10);
         let imgPerfil = req.file.filename;
 
@@ -80,7 +80,7 @@ const usersController = {
 
         user.create(userParaGuardar)
         .then((result) => {
-            return res.redirect("/")
+            return res.redirect("/login")
         })
         
     }

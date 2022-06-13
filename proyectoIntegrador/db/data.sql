@@ -119,4 +119,4 @@ INSERT INTO proyecto_db.producto (id, image, brand, model, variant, year, descri
 VALUES ('24', 'lll', 'Rolls-Royce', 'Ghost', 'Black Badge', '2022', 'Ninguna', '2022-06-08');
 
 /* Inserts comments */
-INSERT INTO `comments` (`id`,`name`,`comment`,`profile_img`) VALUES (1,'Usuario Prueba','Este comentario es una prueba','lll');
+INSERT INTO comments (id,name,comment,profile_img) VALUES (1,'Usuario Prueba','Este comentario es una prueba','lll');

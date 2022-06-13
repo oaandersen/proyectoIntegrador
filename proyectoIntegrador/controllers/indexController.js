@@ -1,6 +1,10 @@
 const data = require('../database/models');
-const index = data.Producto;
+const producto = data.Producto;
+
 const indexController = {
+
+
+/* const indexController = {
 index: function (req, res) {
     res.render('index', {
       producto: data.producto
@@ -9,8 +13,8 @@ index: function (req, res) {
   searchResults: function (req, res) {
     res.render('searchResults')
   },
+*/
 
-/*
   findAll: (req, res) => {
 
     let counter = req.session.contador;
@@ -22,7 +26,7 @@ index: function (req, res) {
   
     req.session.contador = counter;
   
-    index
+  producto
       .findAll({
       })
       .then((result) => {
@@ -31,38 +35,41 @@ index: function (req, res) {
           contador : req.session.contador
         });
       });
-  },
+  }, 
   show: (req, res) => {
     let id = req.params.id;
-    product.findByPk(id).then((result) => {
+    producto.findByPk(id).then((result) => {
       let fi = new Date(result.fechaCarga);
       fecha = `${fi.getDate()}-${fi.getMonth() + 1}-${fi.getFullYear()}`;
-      let product = {
-        nombre: result.nombre,
-        fechaCarga: fecha,
-        descripcion: result.descripcion,
-        genre_id: result.genre_id,
+      let producto = {
+        image: result.image,
+        brand: result.brand,
+        model: result.model,
+        variant: result.variant,
+        year: result.year,
+        description: result.description,
+        upload_date: result.upload_date,
       }
       return res.render("product", {
-        index: product,
+        producto: producto,
       });
     });
   },
   showOne: (req, res) => {
-    let busqueda = req.query.pelicula;
+    let busqueda = req.query.producto;
     data.Producto.findOne({
       where: [{ title: busqueda }],
     }).then((result) => {
       let fi = new Date(result.release_date);
       fecha = `${fi.getDate()}-${fi.getMonth() + 1}-${fi.getFullYear()}`;
-      let product = {
+      let producto = {
         nombre: result.nombre,
         fechaCarga: fecha,
         descripcion: result.descripcion,
         genre_id: result.genre_id,
       }
       return res.render("product", {
-        product: product,
+        producto: producto,
       });
     });
   },
@@ -71,15 +78,15 @@ index: function (req, res) {
   
   },
   store: function (req, res) {
-    let info = req.body; //GUardamos los datos
-    let product = {//creamos la pelicula
+    let info = req.body; //Guardamos los datos
+    let producto = {//creamos el producto
       nombre: info.nombre,
       fechaCarga: info.fecha,
       descripcion: info.descripcion,
       genre_id: info.genre_id,
     }
     db.Producto.create(
-      product
+      producto
     )
       .then((result) => {
         return res.redirect("/")
@@ -87,7 +94,7 @@ index: function (req, res) {
   },
   edit: (req, res) => {
     let id = req.params.id;
-    product.findByPk(id)
+    producto.findByPk(id)
       .then(
         (result) => {
           let fechaFormateada = new Date(result.release_date).toISOString().slice(0,10);
@@ -99,14 +106,14 @@ index: function (req, res) {
             genre_id: result.genre_id,
             id:id
           }
-          return res.render('productEdit',{product:productEdit})
+          return res.render('productAdd',{product:productAdd})
         }
       )
   },
   update:(req,res)=>{
     let productUpdate = req.body;
     let id = req.params.id;
-    product.update(
+    producto.update(
       {
         nombre: productUpdate.nombre,
         release_date: productUpdate.fecha,
@@ -134,7 +141,8 @@ index: function (req, res) {
       return res.redirect("/")
     })
   }
-  */
+  
 };
+
 
 module.exports = indexController;

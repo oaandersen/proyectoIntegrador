@@ -35,7 +35,7 @@ const usersController = {
             where : [{ email :  info.email}]
         }).then((result) => {
             if (result != null) {
-                let claveCorrecta = bcryptjs.compareSync(info.password  , result.password )
+              let claveCorrecta = bcrypt.compareSync(info.password  , result.password )
                 if (claveCorrecta) {
                     req.session.user = result.dataValues;
 

@@ -35,25 +35,20 @@ const usersController = {
             where : [{ email :  info.email}]
         }).then((result) => {
             if (result != null) {
-              let claveCorrecta = bcrypt.compareSync(info.password  , result.password )
-                if (claveCorrecta) {
-                    req.session.user = result.dataValues;
-
-                    /* Evaluar si el checkbox esta en true o existe */
-
+              let claveCorrecta = bcrypt.compareSync(info.password, result.password)
+                if (claveCorrecta == true) {
+                  req.session.user = result.dataValues
+                  
                     if (req.body.remember != undefined) {
                         res.cookie('userId', req.session.user.id, { maxAge : 1000 * 60 * 5})
-                    }
-                   
-                    return res.redirect("/")
-                } else {
-                    return res.send("Existe el mail " + result.email + " pero la clave es incorrecta")
-                }
-                
-            } else {
-                return res.send("No existe el mail " + info.email) 
-            }
-        });
+                      } 
+                      return res.redirect('/')
+                    }if (claveCorrecta == false){
+                      res.send("La contraseña ingresada es incorrecta!")
+                      
+                    }}
+              });
+             // return res.redirect("/")
 
         
 

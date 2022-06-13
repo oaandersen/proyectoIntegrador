@@ -17,7 +17,7 @@ CREATE TABLE user (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 name 	 		  VARCHAR(50) 	NOT NULL,
 email	  	      VARCHAR(50) 	NOT NULL,
-password 		  VARCHAR(50) 	NOT NULL,
+password 		  VARCHAR(100) 	NOT NULL,
 date	  DATE 		    	NOT NULL,
 dni 		  	  INT           NOT NULL,
 profile_img   VARCHAR(500) 	

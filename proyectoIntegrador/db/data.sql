@@ -27,7 +27,7 @@ CREATE TABLE comments (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 name 			  	VARCHAR(50) 	NOT NULL,
 user_id				INT				UNSIGNED,
-product_id 			INT				UNSIGNED,
+producto_id 			INT				UNSIGNED,
 comment 			VARCHAR(50) 	NOT NULL,
 profile_img		VARCHAR(500) ,
 FOREIGN KEY (user_id) REFERENCES user(id),

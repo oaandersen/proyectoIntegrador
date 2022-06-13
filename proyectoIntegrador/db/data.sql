@@ -15,7 +15,7 @@ upload_date	  DATE    		  NOT NULL
 
 CREATE TABLE user (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-user 	 		  VARCHAR(50) 	NOT NULL,
+name 	 		  VARCHAR(50) 	NOT NULL,
 email	  	      VARCHAR(50) 	NOT NULL,
 password 		  VARCHAR(50) 	NOT NULL,
 date	  DATE 		    	NOT NULL,
@@ -42,7 +42,7 @@ FOREIGN KEY (user_id_follower) REFERENCES user(id),
 FOREIGN KEY (user_id_followed) REFERENCES user(id)
 );
 /* Inserts users */
-INSERT INTO user (id, email, user, password, date, dni, profile_img) 
+INSERT INTO user (id, email, name, password, date, dni, profile_img) 
 VALUES (1, 'usuarioprueba@gmail.com','Usuario Prueba', 'contra','2001-01-01', 44444444, NULL);
 
 /* Inserts producto */

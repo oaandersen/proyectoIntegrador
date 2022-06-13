@@ -8,7 +8,7 @@ module.exports = function (sequelize, dataTypes){
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        user: {
+        name: {
             type: dataTypes.STRING
         },
         email: {
@@ -25,7 +25,8 @@ module.exports = function (sequelize, dataTypes){
         },
         profile_img: {
             type: dataTypes.STRING
-        }
+        },
+        
 
     }
 

@@ -65,22 +65,23 @@ const usersController = {
         let info = req.body; //Captura todos los inputs guardados en el formulario
         let passEncriptada = bcrypt.hashSync(info.password, 10);
         let imgPerfil = req.file.filename;
+        
 
         let userParaGuardar = {
-          created_at : new Date(),
-          updated_at : new Date(),
+         // created_at : new Date(),
+          //updated_at : new Date(),
           name : info.name,
           email : info.email,
           password : passEncriptada,
           date : info.date,
           dni : info.dni, 
-          remember_token: "false",
-          img : imgPerfil
+          profile_img : imgPerfil,
+          
         }
-
+        
         user.create(userParaGuardar)
         .then((result) => {
-            return res.redirect("/login")
+            return res.redirect("/users/login")
         })
         
     }

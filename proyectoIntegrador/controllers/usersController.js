@@ -36,17 +36,21 @@ const usersController = {
         }).then((result) => {
             if (result != null) {
               let claveCorrecta = bcrypt.compareSync(info.password, result.password)
-                if (claveCorrecta == true) {
+                if (claveCorrecta == true && result.email == info.email) {
                   req.session.user = result.dataValues
-                  
+                
                     if (req.body.remember != undefined) {
                         res.cookie('userId', req.session.user.id, { maxAge : 1000 * 60 * 5})
                       } 
                       return res.redirect('/')
+
                     }if (claveCorrecta == false){
                       res.send("La contraseña ingresada es incorrecta!")
                       
                     }}
+                    if(result == null)
+                    res.send(`El email ${info.email} no esta registrado!`)
+                    
               });
              // return res.redirect("/")
 

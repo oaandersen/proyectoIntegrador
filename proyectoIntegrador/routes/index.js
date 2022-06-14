@@ -2,7 +2,7 @@ let express = require('express');
 let router = express.Router();
 const indexController = require('../controllers/indexController');
 
-router.get('/all', indexController.findAll);
+router.get('/', indexController.findAll);
 
 router.get('/id/:id', indexController.show);
 

@@ -24,14 +24,13 @@ index: function (req, res) {
     }
     req.session.contador = counter;
     
-    producto.findAll({
-      
-    })
+    producto.findAll()
     .then((result) => {
+      console.log('la bd tiene: '+ result[0].variant);
+      //return res.send(result)
       return res.render("index", {
         listaProduct: result,
         contador : req.session.contador,
-        
       });
     });
   }, 

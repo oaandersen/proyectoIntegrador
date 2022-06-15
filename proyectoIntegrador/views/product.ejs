@@ -18,23 +18,31 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="/images/products/img1.jpg" alt="Automovil deportivo" class="product-detail-img">
+					<div>
+						<h2><span class="clave">Brand:</span> <%= producto.brand %></h2>
+						<h2><span class="clave">Model:</span> <%= producto.model %></h2></a>
+						<h2><span class="clave">Variant:</span> <%= producto.variant %></h2>
+						<h2><span class="clave">Year:</span> <%= producto.year %></h2>
+						<h2><span class="clave">Description:</span> <%= producto.description %></h2>
+						<h2><span class="clave">Upload date:</span> <%= producto.upload_date %></h2>
+						</div>
+			<!--		<img src="/images/products/img1.jpg" alt="Automovil deportivo" class="product-detail-img">
 					<p class="product-detail-description">
 						La versión básica del Veyron 16.4 se fabricó hasta 2011 y más tarde las versiones Grand Sport y
 						Super Sport se iniciaron entre 2009 y 2010. En el episodio final de la temporada 14 durante el
 						"Top Gear Awards Ceremony", Jeremy Clarkson decidió que, siendo el final de una década
 						(2000-2010), deberían premiar también el Coche de la Década, así que Clarkson comentó que el
-						ganador de este premio tenía que ser el Bugatti Veyron, el único coche merecedor.</p>
-				</article>
-				<div class="col-12 col-lg-4">
-					<% for( let i = 0; i <comentarios.length; i++ ) { %>
+						ganador de este premio tenía que ser el Bugatti Veyron, el único coche merecedor.</p> -->
+				</article> 
+<!--				<div class="col-12 col-lg-4">
+					<% for( // let i = 0; i <comentarios.length; i++ ) { %>
 					<section class="comments">
 						<article>
-							<img src="<%=comentarios[i].imagenPerfil %>" alt="">
+							<img src="<%= // comentarios[i].imagenPerfil %>" alt="">
 							<div class="data">
 								<p class="user">
-									<strong> <a href="/users/profile"><%=comentarios[i].nombre %> </a> </strong>
-									<%=comentarios[i].comentario %></p>
+									<strong> <a href="/users/profile"><%=// comentarios[i].nombre %> </a> </strong>
+									<%=// comentarios[i].comentario %></p>
 							</div>
 						</article>
 						<% } %>
@@ -44,7 +52,7 @@
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
 					<hr>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>

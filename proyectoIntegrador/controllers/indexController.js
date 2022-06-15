@@ -63,10 +63,13 @@ index: function (req, res) {
       let fi = new Date(result.release_date);
       fecha = `${fi.getDate()}-${fi.getMonth() + 1}-${fi.getFullYear()}`;
       let producto = {
-        nombre: result.nombre,
-        fechaCarga: fecha,
-        descripcion: result.descripcion,
-        genre_id: result.genre_id,
+        image: result.image,
+        brand: result.brand,
+        model: result.model,
+        variant: result.variant,
+        year: result.year,
+        description: result.description,
+        upload_date: result.upload_date,
       }
       return res.render("product", {
         producto: producto,

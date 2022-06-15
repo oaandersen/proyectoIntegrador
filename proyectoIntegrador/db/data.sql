@@ -43,9 +43,6 @@ user_id_followed	INT			UNSIGNED,
 FOREIGN KEY (user_id_follower) REFERENCES user(id),
 FOREIGN KEY (user_id_followed) REFERENCES user(id)
 );
-/* Inserts users */
-INSERT INTO user (id, email, name, password, date, dni, profile_img) 
-VALUES (1, 'usuarioprueba@gmail.com','Usuario Prueba', 'contra','2001-01-01', 44444444, NULL);
 
 /* Inserts producto */
 INSERT INTO producto (id,image,brand,model,variant,year,description,upload_date) 

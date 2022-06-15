@@ -5,7 +5,12 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerLogeado')  %>
+	<%	if (locals.user != undefined) {	%>
+		<%- include('./partials/headerLogeado')  %>
+		<% } %> 
+		<% if(locals.user == undefined)	{ %>
+			<%- include('./partials/headerDeslogeado')  %>
+		<%	}	%>
 	<!-- /Header -->
 
 	<!-- Datos del usuario -->

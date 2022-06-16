@@ -28,6 +28,7 @@ router.post('/register',  upload.single('imgPerfil') , usersController.procesarR
 
 router.get('/login', usersController.login);
 router.post('/login', usersController.procesarLogin); 
+router.post('/logout', usersController.logout);
 // router.get('/profile', usersController.profile)
 
 // router.get('/profileEdit', usersController.profileEdit)

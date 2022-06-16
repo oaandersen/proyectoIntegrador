@@ -2,6 +2,17 @@ CREATE SCHEMA proyecto_db;
 
 USE proyecto_db;
 
+CREATE TABLE user (
+id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+name 	 		  VARCHAR(50) 	NOT NULL,
+email	  	      VARCHAR(50) 	NOT NULL,
+password 		  VARCHAR(100) 	NOT NULL,
+date	  DATE 		    	NOT NULL,
+dni 		  	  INT           NOT NULL,
+profile_img   VARCHAR(500) 	
+);
+
+
 CREATE TABLE producto (
 id INT UNSIGNED PRIMARY KEY  AUTO_INCREMENT,
 image		      VARCHAR(300)	       	,
@@ -15,24 +26,14 @@ user_id				INT				UNSIGNED,
 FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
-CREATE TABLE user (
-id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-name 	 		  VARCHAR(50) 	NOT NULL,
-email	  	      VARCHAR(50) 	NOT NULL,
-password 		  VARCHAR(100) 	NOT NULL,
-date	  DATE 		    	NOT NULL,
-dni 		  	  INT           NOT NULL,
-profile_img   VARCHAR(500) 	
-);
-
 CREATE TABLE comments (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 name 			  	VARCHAR(50) 	NOT NULL,
-user_id				INT				UNSIGNED,
+cm_user_id				INT				UNSIGNED,
 producto_id 			INT				UNSIGNED,
 comment 			VARCHAR(50) 	NOT NULL,
 profile_img		VARCHAR(500) ,
-FOREIGN KEY (user_id) REFERENCES user(id),
+FOREIGN KEY (cm_user_id) REFERENCES user(id),
 FOREIGN KEY (producto_id) REFERENCES producto(id)
 );
 

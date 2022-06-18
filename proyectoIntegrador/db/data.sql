@@ -118,5 +118,32 @@ VALUES ('23', '/images/products/Porsche-Taycan_Turbo_S_Sport_Turismo-2022-1600-0
 INSERT INTO producto (id, image, brand, model, variant, year, description, upload_date) 
 VALUES ('24', '/images/products/Rolls-Royce-Ghost_Black_Badge-2022-1600-01.jpeg', 'Rolls-Royce', 'Ghost', 'Black Badge', '2022', 'Ninguna descripcion ha sido detallada hasta el momento.', '2022-06-08');
 
+/* Inserts users */
+
+INSERT INTO `proyecto_db`.`user` (`id`, `name`, `email`, `password`, `date`, `dni`) 
+VALUES ('2', 'Julian Araujo', 'araujoj@udesa.edu.ar', '1234', '2001-12-20', '43724883');
+
+INSERT INTO `proyecto_db`.`user` (`id`, `name`, `email`, `password`, `date`, `dni`) 
+VALUES ('3', 'John Doe', 'jdoe@gmail.com', '1234', '1998-06-08', '40448493');
+
+INSERT INTO `proyecto_db`.`user` (`id`, `name`, `email`, `password`, `date`, `dni`) 
+VALUES ('4', 'Oliver Andersen', 'oandersen@udesa.edu.ar', '5678', '1970-01-01', '44896537');
+
+INSERT INTO `proyecto_db`.`user` (`id`, `name`, `email`, `password`, `date`, `dni`) 
+VALUES ('5', 'Nicolas Tufro', 'ntufro@udesa.edu.ar', '5678', '1997-06-22', '43629023');
+
 /* Inserts comments */
-INSERT INTO comments (id,name,comment,profile_img) VALUES (1,'Usuario Prueba','Este comentario es una prueba','/images/products/');
+
+INSERT INTO `proyecto_db`.`comments` (`id`, `name`, `cm_user_id`, `producto_id`, `comment`) 
+VALUES ('2', 'Julian Araujo', '2', '7', 'Me encanta este auto, es mi favorito!');  
+
+INSERT INTO `proyecto_db`.`comments` (`id`, `name`, `cm_user_id`, `producto_id`, `comment`) 
+VALUES ('3', 'Nicolas Tufro', '5', '23', 'Creo que lo voy a agregar a mi coleccion.');
+
+INSERT INTO `proyecto_db`.`comments` (`id`, `name`, `cm_user_id`, `producto_id`, `comment`) 
+VALUES ('4', 'Oliver Andersen', '4', '14', 'Definitivamente lo vale, mira que belleza!');
+
+
+
+
+

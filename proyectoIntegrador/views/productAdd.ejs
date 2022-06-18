@@ -7,11 +7,11 @@
 <body>
 	<!-- Header -->
 	<%	if (locals.user != undefined) {	%>
-		<%- include('./partials/headerLogeado')  %>
-		<% } %> 
-		<% if(locals.user == undefined)	{ %>
-			<%- include('./partials/headerDeslogeado')  %>
-		<%	}	%>
+	<%- include('./partials/headerLogeado')  %>
+	<% } %>
+	<% if(locals.user == undefined)	{ %>
+	<%- include('./partials/headerDeslogeado')  %>
+	<%	}	%>
 	<!-- /Header -->
 
 	<!-- Novedades -->
@@ -21,32 +21,40 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-		<div class="productAdd" >
-			<h2 class="col-12">
-				<form action="GET" action="/product/productAdd">
-					<label for="">Imagen del producto</label>
-					<input type="file" img="foto del producto">
+			<div class="productAdd">
+				<h2 class="col-12">
+					<form action="/product/productAdd" method="POST">
+						<label for="imagen">Imagen del producto</label>
+						<input id="imagen" type="file" name="imagen">
+				</h2>
+				<h2 class="col-12">
+					<label for="brand">Marca</label>
+					<input id="brand" type="text" name="brand">
+				</h2>
+				<h2 class="col-12">
+					<label for="model">Modelo</label>
+					<input id="model" type="text" name="model">
+				</h2>
+				<h2 class="col-12">
+					<label for="variant">variante</label>
+					<input id="variant" type="text" name="variant">
+				</h2>
+				<h2 class="col-12">
+					<label for="year">año</label>
+					<input id="year" type="text" name="year">
+				</h2>
+				<h2 class="col-12">
+					<label for="description">Descripcion</label>
+					<input id="description" type="text" name="description">
+				</h2>
+				<h2 class="col-12">
+					<label for="upload_date">Fecha de subida</label>
+					<input id="upload_date" type="text" name="upload_date">
+				</h2>
+				<button class="div-users, botonesVarios" type="text" class="submit">subir</button>
 				</form>
-			</h2>
-			<h2 class="col-12">
-				<form action="GET" action="/product/productAdd">
-					<label for="">Nombre del producto</label>
-					<input type="text" name="nombre del producto">
-				</form>
-			</h2>
-			<h2 class="col-12">
-				<form action="GET" action="/product/productAdd">
-					<label for="">Descripcion del producto</label>
-					<input type="text" name="Descripcion del producto">
-				</form>
-			</h2>
-			<h2 class="col-12">
-				<form action="GET" action="/product/productAdd">
-					<label for="">Fecha de carga</label>
-					<input type="date" date="Fecha de carga">
-				</form>
-			</h2>
-		</div>
+				</h2>
+			</div>
 
 			<!-- footer -->
 			<%- include('./partials/footer')  %>

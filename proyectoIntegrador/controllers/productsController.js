@@ -1,5 +1,6 @@
 const data = require('../database/models');
 const product = data.Producto;
+const comment = data.Comment;
 
 const productsController = {
 
@@ -32,7 +33,7 @@ const productsController = {
       producto
     )
       .then((result) => {
-        return res.redirect("/productAdd")
+        return res.redirect("/")
       })
   },
   edit: (req, res) => {
@@ -83,11 +84,20 @@ const productsController = {
     .then((result)=>{
       return res.redirect("/")
     })
-  }
+  },
   
+  showc: (req, res) => {
+    let id = req.params.id;
+    comment.findByPk(id).then((result) => {
+      
+      return res.render("/", {
+        comment: result
+      }); 
+    });
+  },
  /* product: function (req, res) {
     res.render('product', {
-      comentarios: data.comentarios
+      comment: data.comentarios
   }); 
 
   },

@@ -14,22 +14,25 @@ const productsController = {
   },
  
   create: (req, res) => {
-    return res.render('register');
+    return res.render('productAdd');
   
   },
   store: function (req, res) {
     let info = req.body; //Guardamos los datos
     let producto = {//creamos el producto
-      nombre: info.nombre,
-      fechaCarga: info.fecha,
-      descripcion: info.descripcion,
-      genre_id: info.genre_id,
+      image: info.image,
+      brand: info.brand,
+      model: info.model,
+      variant: info.variant,
+      year: info.year,
+      description: info.description,
+      upload_date: info.uploaddate,
     }
     data.Producto.create(
       producto
     )
       .then((result) => {
-        return res.redirect("/")
+        return res.redirect("/productAdd")
       })
   },
   edit: (req, res) => {

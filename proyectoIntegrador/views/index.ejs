@@ -29,18 +29,17 @@
 			<% for( let i = 0; i <listaProduct.length; i++ ) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box"> 	 	
-					<a href="/product/id/<%= listaProduct[i].id %>"><%= listaProduct[i].variant %>"> 	</a>
 						<a href="/product/productAdd/<%= listaProduct[i].id %>">Modificar</a>
 						| <a href="/product/deleteProduct/<%= listaProduct[i].id %>">Eliminar</a>
 						<figure class="product-box_image">
-							<img class="product-img" src="<%= listaProduct[i].image %> "
-								alt="<%= // producto[i].nombreProducto %>">
+							<a href="/product/id/<%= listaProduct[i].id %> "><img class="product-img" src="<%= listaProduct[i].image %> "</a>
+								alt="<%=// producto[i].nombreProducto %>">
 
 						</figure>
 						
 						<article class="product-box_data">
-							<h2><%= listaProduct[i].brand + ' ' + listaProduct[i].model + ' ' + listaProduct[i].variant %></h2>
-							<p><%= listaProduct[i].year + ' - ' + listaProduct[i].description %></p>
+							<a href="/product/id/<%= listaProduct[i].id %> "><h2><%= listaProduct[i].brand + ' ' + listaProduct[i].model + ' ' + listaProduct[i].variant %></h2></a>
+							<p><a href="/product/id/<%= listaProduct[i].id %> "><%= listaProduct[i].year + ' - ' + listaProduct[i].description %></p></a>
 							<p></p>
 						</article>
 			

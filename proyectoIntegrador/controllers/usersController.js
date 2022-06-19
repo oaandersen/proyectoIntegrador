@@ -90,6 +90,12 @@ const usersController = {
     logout: (req, res) => {
       res.clearCookie('userId');
       res.redirect('/')
+    },
+    profile: (req, res) => {
+      res.render('profile')
+    },
+    profileEdit: (req, res) => {
+      res.render('profileEdit')
     }
 
 }

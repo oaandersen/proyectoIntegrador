@@ -31,6 +31,9 @@ router.post('/login', usersController.procesarLogin);
 router.post('/logout', usersController.logout);
 // router.get('/profile', usersController.profile)
 
+
+router.get('/profile', usersController.profile);
+router.get('/profileEdit', usersController.profileEdit);
 // router.get('/profileEdit', usersController.profileEdit)
 
 

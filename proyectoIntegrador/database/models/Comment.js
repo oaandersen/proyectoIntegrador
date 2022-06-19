@@ -11,7 +11,7 @@ module.exports = function (sequelize, dataTypes) {
         name:{
             type:dataTypes.STRING
         },
-        user_id:{
+        cm_user_id:{
             type:dataTypes.INTEGER
         },
         producto_id:{

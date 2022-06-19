@@ -3,7 +3,25 @@ const product = data.Producto;
 const comment = data.Comment;
 
 const productsController = {
+  findAll: (req, res) => {
+    let counter = req.session.contador;
+    if (counter != undefined) {
+      counter +=1
+    } else {
+      counter = 1;
+    }
+    req.session.contador = counter;
 
+  comment.findAll()
+  .then((result) => {
+    console.log('la bd tiene: '+ result[0].comment);
+    //return res.send(result)
+    return res.render("product", {
+      comment: result,
+      contador : req.session.contador,
+    });
+  });
+}, 
   show: (req, res) => {
     let id = req.params.id;
     product.findByPk(id).then((result) => {
@@ -71,7 +89,7 @@ const productsController = {
       }
     )
     .then((result)=>{
-      return res.redirect("/product/all")
+      return res.redirect("/")
     })
   },
   destroy:(req,res)=>{
@@ -85,16 +103,10 @@ const productsController = {
       return res.redirect("/")
     })
   },
+ 
   
-  showc: (req, res) => {
-    let id = req.params.id;
-    comment.findByPk(id).then((result) => {
-      
-      return res.render("/", {
-        comment: result
-      }); 
-    });
-  },
+
+
  /* product: function (req, res) {
     res.render('product', {
       comment: data.comentarios

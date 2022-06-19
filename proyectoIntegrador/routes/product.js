@@ -2,8 +2,7 @@ let express = require('express');
 let router = express.Router();
 const productsController = require('../controllers/productsController');
 
-router.get('/id/:id', productsController.show);
-router.get('/id/:id', productsController.showc)
+router.get('/id/:id', productsController.show, productsController.findAll );
 
 router.get('/productAdd', productsController.create);
 

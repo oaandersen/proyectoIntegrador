@@ -22,7 +22,7 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> EDITAR PERFIL
-				<form class="formulario-users" action="GET" action="/users/register">
+				<form class="formulario-users" method="POST" action="/users/procesarEdit" enctype="multipart/form-data">
 					<div class="div-users">
 						<label for="Email"> Editar email</label>
 						<input type="text" email="email">
@@ -51,8 +51,9 @@
 						<label for="fotoPerfil">Editar foto de perfil</label>
 						<input type="file" img="foto de perfil">
 					</div>
+					<button type="text" class="submit">Submit</button>
+					
 				</form>
-				<input class="div-users, botonesVarios" type="submit" value="Registrarse">
 			</h2>
 
 

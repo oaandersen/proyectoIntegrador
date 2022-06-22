@@ -96,8 +96,11 @@ const usersController = {
     }
   },
   logout: (req, res) => {
+    req.session.destroy();
+    if(req.cookies.userId !== undefined){
     res.clearCookie('userId')
-    res.redirect('/')
+  }
+    return res.redirect('/')
   },
   profile: (req, res) => {
     res.render('profile')

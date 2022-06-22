@@ -25,12 +25,16 @@ let upload = multer({ storage : storage})
 router.get('/register', usersController.register);
 router.post('/register',  upload.single('imgPerfil') , usersController.procesarRegister);
 
-
 router.get('/login', usersController.login);
 router.post('/login', usersController.procesarLogin); 
+
 router.post('/logout', usersController.logout);
 // router.get('/profile', usersController.profile)
 
+
+router.get('/profile', usersController.profile); //Ir hacia el perfil
+router.get('/profileEdit', usersController.profileEdit); //Ir hacia profile edit
+router.post('/profileEdit', usersController.procesarEdit); // Editar Perfil
 // router.get('/profileEdit', usersController.profileEdit)
 
 

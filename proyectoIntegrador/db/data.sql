@@ -130,7 +130,7 @@ INSERT INTO `proyecto_db`.`user` (`id`, `name`, `email`, `password`, `date`, `dn
 VALUES ('4', 'Oliver Andersen', 'oandersen@udesa.edu.ar', '5678', '1970-01-01', '44896537');
 
 INSERT INTO `proyecto_db`.`user` (`id`, `name`, `email`, `password`, `date`, `dni`) 
-VALUES ('5', 'Nicolas Tufro', 'ntufro@udesa.edu.ar', '5678', '1997-06-22', '43629023');
+VALUES ('5', 'Nicolas Tufro', 'ntufroo@udesa.edu.ar', '5678', '1997-06-22', '43629023');
 
 /* Inserts comments */
 

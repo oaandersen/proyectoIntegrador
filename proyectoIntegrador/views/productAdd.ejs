@@ -23,29 +23,34 @@
 			<!-- Show the "ultimos" products -->
 			<div class="productAdd">
 				<h2 class="col-12">
-					<form action="/product/productAdd" method="POST" enctype="multipart/form-data">
-						<label for="imagen">Imagen del auto</label>
-						<input id="imagen" type="file" name="imagen">
+					<form class="formulario-productos" action="/product/productAdd" method="POST" enctype="multipart/form-data">
+				<h2>
+					<label for="image">Imagen del auto:</label>
+					<input id="image" type="file" name="image"	placeholder="image">
 				</h2>
 				<h2 class="col-12">
 					<label for="brand">Marca:</label>
-					<input id="brand" type="text" name="brand">
+					<input id="brand" type="text" name="brand" placeholder="brand">
 				</h2>
 				<h2 class="col-12">
 					<label for="model">Modelo:</label>
-					<input id="model" type="text" name="model">
+					<input id="model" type="text" name="model" placeholder="model">
 				</h2>
 				<h2 class="col-12">
 					<label for="variant">Variante:</label>
-					<input id="variant" type="text" name="variant">
+					<input id="variant" type="text" name="variant" placeholder="variant">
 				</h2>
 				<h2 class="col-12">
 					<label for="year">Año:</label>
-					<input id="year" type="text" name="year">
+					<input id="year" type="text" name="year" placeholder="year">
 				</h2>
 				<h2 class="col-12">
 					<label for="description">Descripción:</label>
-					<input id="description" type="text" name="description">
+					<input id="description" type="text" name="description" placeholder="description">
+				</h2>
+				<h2 class="col-12">
+					<label for="upload_date">Fecha:</label>
+					<input id="upload_date" type="text" name="upload_date" placeholder="upload_date">
 				</h2>
 				<button class="div-users, botonesVarios" type="text" class="submit">Subir</button>
 				</form>

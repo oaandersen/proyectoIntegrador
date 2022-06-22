@@ -112,18 +112,19 @@ const usersController = {
   procesarEdit: (req, res) => {
 
     let info = req.body; //Captura todos los inputs guardados en el formulario
-    //let passwordEncriptada = bcrypt.hashSync(info.password, 10);
+    let passwordEncriptada = bcrypt.hashSync(info.password, 10);
     //let imgPerfil = req.file.filename;
 
-
-    user.update({
-        email: info.email,
-        name: info.name,
-      //  password: passwordEncriptada,
-        date: info.date,
-        dni: info.dni,
+    let userUpdate = {
+      email: info.email,
+      name: info.name,
+      password: info.password,
+      date: info.date,
+      dni: info.dni,
       //  profile_img: info.profile_img,
-      }, {
+    }
+    
+    user.update(userUpdate,{
         where: {
           id: user.id
         }

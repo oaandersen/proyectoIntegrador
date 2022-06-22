@@ -28,9 +28,9 @@ const productsController = {
       variant: info.variant,
       year: info.year,
       description: info.description,
-      created_at : new Date(),
+      upload_date : info.upload_date
     }
-    data.Producto.create(producto)
+    product.create(producto)
       .then((result) => {
         return res.redirect("/")
       })

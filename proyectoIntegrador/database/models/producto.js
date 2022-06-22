@@ -40,9 +40,9 @@ module.exports = function (sequelize, dataTypes) {
     const producto = sequelize.define(alias, cols, config); // definiendo el modelo
    
     producto.associate = function(models){
-        producto.hasMany(models.comment,{
-            as: "commentsProduct",
-            foreignKey: "product_id"
+        producto.hasMany(models.Comment,{
+            as: "Comment",
+            foreignKey: "producto_id"
         }); 
     }
     return producto;

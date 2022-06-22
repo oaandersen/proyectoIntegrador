@@ -3,18 +3,6 @@ const producto = data.Producto;
 
 const indexController = {
 
-
-/* const indexController = {
-index: function (req, res) {
-    res.render('index', {
-      producto: data.producto
-    });
-  },
-  searchResults: function (req, res) {
-    res.render('searchResults')
-  },
-*/
-
   findAll: (req, res) => {
     let counter = req.session.contador;
     if (counter != undefined) {
@@ -26,7 +14,6 @@ index: function (req, res) {
     
     producto.findAll()
     .then((result) => {
-      console.log('la bd tiene: '+ result[0].variant);
       //return res.send(result)
       return res.render("index", {
         listaProduct: result,

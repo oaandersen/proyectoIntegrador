@@ -28,11 +28,9 @@ FOREIGN KEY (user_id) REFERENCES user(id)
 
 CREATE TABLE comments (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-name 			  	VARCHAR(50) 	NOT NULL,
 cm_user_id				INT				UNSIGNED,
 producto_id 			INT				UNSIGNED,
 comment 			VARCHAR(50) 	NOT NULL,
-profile_img		VARCHAR(500) ,
 FOREIGN KEY (cm_user_id) REFERENCES user(id),
 FOREIGN KEY (producto_id) REFERENCES producto(id)
 );
@@ -120,28 +118,28 @@ VALUES ('24', '/images/products/Rolls-Royce-Ghost_Black_Badge-2022-1600-01.jpeg'
 
 /* Inserts users */
 
-INSERT INTO `proyecto_db`.`user` (`id`, `name`, `email`, `password`, `date`, `dni`) 
-VALUES ('2', 'Julian Araujo', 'araujoj@udesa.edu.ar', '1234', '2001-12-20', '43724883');
+INSERT INTO `proyecto_db`.`user` (`name`, `email`, `password`, `date`, `dni`) 
+VALUES ('Julian Araujo', 'araujoj@udesa.edu.ar', '1234', '2001-12-20', '43724883');
 
-INSERT INTO `proyecto_db`.`user` (`id`, `name`, `email`, `password`, `date`, `dni`) 
-VALUES ('3', 'John Doe', 'jdoe@gmail.com', '1234', '1998-06-08', '40448493');
+INSERT INTO `proyecto_db`.`user` (`name`, `email`, `password`, `date`, `dni`) 
+VALUES ('John Doe', 'jdoe@gmail.com', '1234', '1998-06-08', '40448493');
 
-INSERT INTO `proyecto_db`.`user` (`id`, `name`, `email`, `password`, `date`, `dni`) 
-VALUES ('4', 'Oliver Andersen', 'oandersen@udesa.edu.ar', '5678', '1970-01-01', '44896537');
+INSERT INTO `proyecto_db`.`user` (`name`, `email`, `password`, `date`, `dni`) 
+VALUES ('Oliver Andersen', 'oandersen@udesa.edu.ar', '5678', '1970-01-01', '44896537');
 
-INSERT INTO `proyecto_db`.`user` (`id`, `name`, `email`, `password`, `date`, `dni`) 
-VALUES ('5', 'Nicolas Tufro', 'ntufro@udesa.edu.ar', '5678', '1997-06-22', '43629023');
+INSERT INTO `proyecto_db`.`user` (`name`, `email`, `password`, `date`, `dni`) 
+VALUES ('Nicolas Tufro', 'ntufro@udesa.edu.ar', '5678', '1997-06-22', '43629023');
 
 /* Inserts comments */
 
-INSERT INTO `proyecto_db`.`comments` (`id`, `name`, `cm_user_id`, `producto_id`, `comment`) 
-VALUES ('2', 'Julian Araujo', '2', '7', 'Me encanta este auto, es mi favorito!');  
+INSERT INTO `proyecto_db`.`comments` (`cm_user_id`, `producto_id`, `comment`) 
+VALUES ('1', '7', 'Me encanta este auto, es mi favorito!');  
 
-INSERT INTO `proyecto_db`.`comments` (`id`, `name`, `cm_user_id`, `producto_id`, `comment`) 
-VALUES ('3', 'Nicolas Tufro', '5', '23', 'Creo que lo voy a agregar a mi coleccion.');
+INSERT INTO `proyecto_db`.`comments` (`cm_user_id`, `producto_id`, `comment`) 
+VALUES ('1', '23', 'Creo que lo voy a agregar a mi coleccion.');
 
-INSERT INTO `proyecto_db`.`comments` (`id`, `name`, `cm_user_id`, `producto_id`, `comment`) 
-VALUES ('4', 'Oliver Andersen', '4', '14', 'Definitivamente lo vale, mira que belleza!');
+INSERT INTO `proyecto_db`.`comments` (`cm_user_id`, `producto_id`, `comment`) 
+VALUES ('1', '14', 'Definitivamente lo vale, mira que belleza!');
 
 
 

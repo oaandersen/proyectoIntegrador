@@ -1,33 +1,16 @@
 const data = require('../database/models');
 const product = data.Producto;
-const comment = data.Comment;
 
 const productsController = {
-  findAll: (req, res) => {
-    let counter = req.session.contador;
-    if (counter != undefined) {
-      counter +=1
-    } else {
-      counter = 1;
-    }
-    req.session.contador = counter;
 
-  comment.findAll()
-  .then((result) => {
-    console.log('la bd tiene: '+ result[0].comment);
-    //return res.send(result)
-    return res.render("product", {
-      comment: result,
-      contador : req.session.contador,
-    });
-  });
-}, 
   show: (req, res) => {
-    let id = req.params.id;
-    product.findByPk(id).then((result) => {
-      
+   product.findByPk(req.params.id, {include:[{association:"Comment"}], all: true, nested: true}) //all: true, nested: true
+
+    .then((result) => {
+      console.log(result);
       return res.render("product", {
-        producto: result
+        producto: result,
+        comment: result.Comment,
       }); 
     });
   },
@@ -103,7 +86,19 @@ const productsController = {
       return res.redirect("/")
     })
   },
- 
+ comment: (req,res)=>{
+  let comment = {
+    cm_user_id: req.session.user.id,
+    producto_id: req.params.id, 
+    comment: req.body.comment, 
+  };
+  data.Comment.create(
+    comment
+  )
+  .then((result) => {
+    return res.redirect("/product/id/" + req.params.id)
+  })
+ }
   
 
 

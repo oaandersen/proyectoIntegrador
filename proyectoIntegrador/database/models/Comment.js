@@ -1,15 +1,12 @@
 module.exports = function (sequelize, dataTypes) {
     
-    let alias = "comment";
+    let alias = "Comment";
 
     let cols = {
         id:{
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER,
-        },
-        name:{
-            type:dataTypes.STRING
         },
         cm_user_id:{
             type:dataTypes.INTEGER
@@ -20,12 +17,9 @@ module.exports = function (sequelize, dataTypes) {
         comment:{
             type:dataTypes.STRING
         },
-        profile_img:{
-            type:dataTypes.STRING
-        },
     }
     let config = {
-        tableName: 'comment', 
+        tableName: 'comments', 
         timestamps: false, 
         underscored: true, 
     };
@@ -40,7 +34,7 @@ module.exports = function (sequelize, dataTypes) {
     comment.associate = function(modelos){
         comment.belongsTo(modelos.User,{
             as: "commentsUser",
-            foreignKey: "user_id"
+            foreignKey: "cm_user_id"
         }); 
     }
     return comment;

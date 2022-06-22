@@ -28,7 +28,7 @@ const productsController = {
       variant: info.variant,
       year: info.year,
       description: info.description,
-      upload_date: info.uploaddate,
+      created_at : new Date(),
     }
     data.Producto.create(
       producto
@@ -92,6 +92,7 @@ const productsController = {
     producto_id: req.params.id, 
     comment: req.body.comment, 
   };
+  
   data.Comment.create(
     comment
   )

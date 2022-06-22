@@ -15,10 +15,10 @@ profile_img         VARCHAR(500)
 
 CREATE TABLE producto (
 id INT UNSIGNED PRIMARY KEY  AUTO_INCREMENT,
-image		      VARCHAR(300)	       	,
-brand			    VARCHAR(50)		NOT NULL,
-model		      VARCHAR(50)		NOT NULL,
-variant		    VARCHAR(50)	      		,
+image		        VARCHAR(300)	       	,
+brand			    VARCHAR(100)		NOT NULL,
+model		        VARCHAR(100)		NOT NULL,
+variant		        VARCHAR(100)	    NOT NULL,
 year		      INT		     	  NOT NULL,
 description	  VARCHAR(500)		NOT NULL,
 upload_date	  DATE    		  NOT NULL,

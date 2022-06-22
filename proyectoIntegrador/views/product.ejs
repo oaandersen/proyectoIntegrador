@@ -25,13 +25,13 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					<div>
 
-						<a href="/product/id/<%= producto.id %> "><img class="product-img" src="  "</a>
-						<h2><span class="clave">Brand:</span> <%= producto.brand %></h2>
-						<h2><span class="clave">Model:</span> <%= producto.model %></h2></a>
-						<h2><span class="clave">Variant:</span> <%= producto.variant %></h2>
-						<h2><span class="clave">Year:</span> <%= producto.year %></h2>
-						<h2><span class="clave">Description:</span> <%= producto.description %></h2>
-						<h2><span class="clave">Upload date:</span> <%= producto.upload_date %></h2>
+						<a href="/product/id/<%= producto.id %> "><img class="product-detail-img" src="<%= producto.image %> "</a>
+						<h2 class="product-detail-info">Brand: <%= producto.brand %></h2>
+						<h2 class="product-detail-info">Model: <%= producto.model %></h2></a>
+						<h2 class="product-detail-info">Variant: <%= producto.variant %></h2>
+						<h2 class="product-detail-info">Year: <%= producto.year %></h2>
+						<h2 class="product-detail-info">Description: <%= producto.description %></h2>
+						<h2 class="product-detail-info">Upload date: <%= producto.upload_date %></h2>
 						</div>
 
 				</article> 
@@ -39,11 +39,11 @@
 					<% for( let i = 0; i <  comment.length; i++ ) { %>
 						<section class="comments">
 							<article>
-								<img src="<%= comment[i].imagenPerfil %>" alt="">
+								<img src="<%= user.imgPerfil %>" alt="">
 								<div class="data">
 									<p class="user">
-										<strong> <a href="/users/profile"><%= comment[i].nombre %> </a> </strong>
-										<%=  comment[i].comentario %></p>
+										<strong> <a href="/users/profile"><%= user.name %>: </a> </strong>
+										<%= comment[i].comment %></p>
 								</div>
 							</article>
 							<% } %>

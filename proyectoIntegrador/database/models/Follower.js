@@ -1,6 +1,6 @@
 module.exports = function (sequelize, dataTypes) {
     
-    let alias = "follower";
+    let alias = "Follower";
 
     let cols = {
         id:{
@@ -16,15 +16,20 @@ module.exports = function (sequelize, dataTypes) {
         },
     }
     let config = {
-        tableName: 'follower', 
+        tableName: 'followers', 
         timestamps: false, 
         underscored: true, 
     };
 
-    const follower = sequelize.define(alias, cols, config); // definiendo el modelo
-    /* producto.associate = function(modelos){
-        producto.belongsTo(); // la parte que representa a 1.
-        producto.hasMany(); // La parte que representa a muchos.
-    }*/
-    return follower;
+    const Follower = sequelize.define(alias, cols, config); // definiendo el modelo
+    Follower.associate = function(models){
+        Follower.belongsToMany(models.Follower, {
+        as: "Followers",
+        through: "Follower",
+        foreignKey: "user_id_followed",
+        otherKey: "user_id_follower",
+        timestamps: false
+        });
+    }
+    return Follower;
 }

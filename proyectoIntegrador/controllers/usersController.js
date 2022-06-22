@@ -34,7 +34,7 @@ const usersController = {
               res.cookie('userId', req.session.user.id, {
                 maxAge: 1000 * 60 * 5
               })
-            }
+            } 
             return res.redirect('/')
 
           }
@@ -109,17 +109,17 @@ const usersController = {
   procesarEdit: (req, res) => {
 
     let info = req.body; //Captura todos los inputs guardados en el formulario
-    let passwordEncriptada = bcrypt.hashSync(info.password, 10);
+    //let passwordEncriptada = bcrypt.hashSync(info.password, 10);
     //let imgPerfil = req.file.filename;
 
 
     user.update({
-        name: info.name,
         email: info.email,
-        password: passwordEncriptada,
+        name: info.name,
+      //  password: passwordEncriptada,
         date: info.date,
         dni: info.dni,
-        profile_img: info.profile_img,
+      //  profile_img: info.profile_img,
       }, {
         where: {
           id: user.id

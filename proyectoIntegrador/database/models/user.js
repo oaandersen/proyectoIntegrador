@@ -38,11 +38,18 @@ module.exports = function (sequelize, dataTypes){
 
     const user = sequelize.define(alias, cols, config);
     user.associate = function(models){
+        user.hasMany(models.producto,{
+            as: "posteos",
+            foreignKey: "id"
+        });  }
+    user.associate = function(models){
+
         user.hasMany(models.Comment,{
             as: "commentsUser",
             foreignKey: "cm_user_id"
         }); 
     }
+       
     return user;
 
 }

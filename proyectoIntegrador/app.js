@@ -21,37 +21,39 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
   secret: "myApp",
   resave: false,
-saveUninitialized:true
+  saveUninitialized: true
 }));
 
-app.use(function(req,res,next){
-  if (req.session.user != undefined){
+app.use(function (req, res, next) {
+  if (req.session.user != undefined) {
     res.locals.user = req.session.user
   }
   return next();
 });
 
-app.use(function(req,res,next){
-  if (req.cookies.userId != undefined && req.session == undefined){
-let idUsuario = req.cookies.userId;
+app.use(function (req, res, next) {
+  if (req.cookies.userId != undefined && req.session == undefined) {
+    let idUsuario = req.cookies.userId;
 
-db.User.findByPk(idUsuario)
-.then((user) => {
-req.sessinon.user = user.dataValues;
-res.locals.user = user.dataValues;
-return next();
-}).catch((err)=>{
-console.log(err);
-});
+    db.User.findByPk(idUsuario)
+      .then((user) => {
+        req.sessinon.user = user.dataValues;
+        res.locals.user = user.dataValues;
+        return next();
+      }).catch((err) => {
+        console.log(err);
+      });
   } else {
-return next()
+    return next()
   }
 });
 

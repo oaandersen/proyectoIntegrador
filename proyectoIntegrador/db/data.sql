@@ -118,17 +118,15 @@ VALUES ('24', '/images/products/Rolls-Royce-Ghost_Black_Badge-2022-1600-01.jpeg'
 
 /* Inserts users */
 
-INSERT INTO `proyecto_db`.`user` (`name`, `email`, `password`, `date`, `dni`) 
-VALUES ('Julian Araujo', 'araujoj@udesa.edu.ar', '1234', '2001-12-20', '43724883');
+INSERT INTO `user` (`id`,`name`,`email`,`password`,`date`,`dni`,`profile_img`) 
+VALUES (1,'Julian Araujo','araujoj@udesa.edu.ar','$2a$10$w3oGpY63peygRjhjwoaLRu1Q5BkJQohUZopnh/2v.eBfMKmG5qVZy','2001-12-20',43724883,'imgPerfil-1655927750080.jpg');
 
-INSERT INTO `proyecto_db`.`user` (`name`, `email`, `password`, `date`, `dni`) 
-VALUES ('John Doe', 'jdoe@gmail.com', '1234', '1998-06-08', '40448493');
+INSERT INTO `user` (`id`,`name`,`email`,`password`,`date`,`dni`,`profile_img`) 
+VALUES (2,'Oliver Andersen','oandersen@udesa.edu.ar','$2a$10$w6BVm8B6mIJ5Hmpl2K.wF.UV/oW.BdZFX3gdKSkr2/SlZNV7h4iOC','2002-07-22',44738639,'imgPerfil-1655927839296.png');
 
-INSERT INTO `proyecto_db`.`user` (`name`, `email`, `password`, `date`, `dni`) 
-VALUES ('Oliver Andersen', 'oandersen@udesa.edu.ar', '5678', '1970-01-01', '44896537');
+INSERT INTO `user` (`id`,`name`,`email`,`password`,`date`,`dni`,`profile_img`) 
+VALUES (3,'Nicolas Tufro','ntufro@udesa.edu.ar','$2a$10$lyq4x6Dg62WpuiuP2CC4tOAhorY29jSTQS6zvyIo9nUYE6bFKof.y','2002-08-05',44238393,'imgPerfil-1655927932941.jpeg');
 
-INSERT INTO `proyecto_db`.`user` (`name`, `email`, `password`, `date`, `dni`) 
-VALUES ('Nicolas Tufro', 'ntufroo@udesa.edu.ar', '5678', '1997-06-22', '43629023');
 
 /* Inserts comments */
 

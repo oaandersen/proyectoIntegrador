@@ -128,7 +128,7 @@ INSERT INTO `proyecto_db`.`user` (`name`, `email`, `password`, `date`, `dni`)
 VALUES ('Oliver Andersen', 'oandersen@udesa.edu.ar', '5678', '1970-01-01', '44896537');
 
 INSERT INTO `proyecto_db`.`user` (`name`, `email`, `password`, `date`, `dni`) 
-VALUES (' 'Nicolas Tufro', 'ntufroo@udesa.edu.ar', '5678', '1997-06-22', '43629023');
+VALUES ('Nicolas Tufro', 'ntufroo@udesa.edu.ar', '5678', '1997-06-22', '43629023');
 
 /* Inserts comments */
 

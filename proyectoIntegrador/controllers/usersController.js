@@ -54,7 +54,7 @@ const usersController = {
 
             if (req.body.remember != undefined) {
               res.cookie('userId', req.session.user.id, {
-                maxAge: 1000 * 60 * 100
+                maxAge: 1000 * 60 * 5
               })
             }
             return res.redirect('/')
@@ -93,6 +93,7 @@ const usersController = {
 
 
       let passEncriptada = bcrypt.hashSync(info.password, 10);
+      
       let imgPerfil = req.file.filename;
 
 
@@ -117,7 +118,7 @@ const usersController = {
     }
   },
   logout: (req, res) => {
-    res.clearCookie('userId');
+    res.clearCookie('userId')
     res.redirect('/')
   },
   profile: (req, res) => {

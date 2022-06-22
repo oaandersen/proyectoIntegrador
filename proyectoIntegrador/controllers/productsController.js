@@ -30,9 +30,7 @@ const productsController = {
       description: info.description,
       created_at : new Date(),
     }
-    data.Producto.create(
-      producto
-    )
+    data.Producto.create(producto)
       .then((result) => {
         return res.redirect("/")
       })

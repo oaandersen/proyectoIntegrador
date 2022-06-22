@@ -33,6 +33,15 @@ const usersController = {
 
     let info = req.body;
 
+
+    if(info.email == ""){
+      res.send("El campo de email esta vacio!")
+
+    } else if (info.password == ""){
+       res.send("El campo de la contraseña esta vacio!")
+      
+    } else {
+
     user.findOne({
       where: [{
         email: info.email
@@ -64,7 +73,7 @@ const usersController = {
 
 
 
-  },
+  }},
   register: (req, res) => {
     return res.render("register");
   },
@@ -72,6 +81,16 @@ const usersController = {
   procesarRegister: (req, res) => {
 
     let info = req.body; //Captura todos los inputs guardados en el formulario
+    
+    if(info.name == ""){
+      res.send("El nombre esta vacio!")
+    } else if(info.email == ""){
+      res.send("El email esta vacio!")
+    } else if(info.password == ""){
+      res.send("La contraseña esta vacia!")
+    } else{
+    
+    
     let passEncriptada = bcrypt.hashSync(info.password, 10);
     let imgPerfil = req.file.filename;
 
@@ -94,7 +113,7 @@ const usersController = {
         return res.redirect("/users/login")
       })
 
-  },
+  }},
   logout: (req, res) => {
     res.clearCookie('userId');
     res.redirect('/')
@@ -109,14 +128,14 @@ const usersController = {
   procesarEdit: (req, res) => {
 
     let info = req.body; //Captura todos los inputs guardados en el formulario
-    passEncriptada = bcrypt.hashSync(info.password, 10);
+    let  passwordEncriptada = bcrypt.hashSync(info.password, 10);
     //let imgPerfil = req.file.filename;
 
     
     user.update({
       name: info.name,
       email: info.email,
-      password: passEncriptada,
+      password: passwordEncriptada,
       date: info.date,
       dni: info.dni,
       profile_img: info.profile_img,

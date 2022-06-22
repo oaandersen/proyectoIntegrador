@@ -1,28 +1,6 @@
 const data = require('../database/models');
 const user = data.User;
-
-/* const usersController = {
-  'register': function (req, res) {
-    res.render('register');
-  },
-  'login': function (req, res) {
-    res.render('login')
-  },
-  'profile': function (req, res) {
-    res.render('profile', {
-      usuario: data.usuario,
-      producto: data.producto
-    })
-  },
-  profileEdit: function (req, res) {
-    res.render('profileEdit', {
-      usuario: data.usuario
-    })
-  },
-} */
-/* Requiriendo el modulo de bcryptjs .. */
 const bcrypt = require("bcryptjs");
-const db = require('../database/models');
 
 const usersController = {
   login: (req, res) => {

@@ -98,10 +98,8 @@ const productsController = {
   .then((result) => {
     return res.redirect("/product/id/" + req.params.id)
   })
- }
-  
-
-
+ },
+ 
  /* product: function (req, res) {
     res.render('product', {
       comment: data.comentarios
@@ -115,7 +113,6 @@ const productsController = {
   },
 */
 };
-
 
 
 module.exports = productsController;

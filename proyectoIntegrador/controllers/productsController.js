@@ -40,38 +40,18 @@ const productsController = {
     producto.findByPk(id)
       .then(
         (result) => {
-          let fechaFormateada = new Date(result.release_date).toISOString().slice(0,10);
-  
           let productEdit = {
-            nombre: result.nombre,
-            release_date: fechaFormateada,
-            descripcion: result.descripcion,
-            genre_id: result.genre_id,
-            id:id
+            image: req.file.filename,
+            brand: result.brand,
+            model: result.model,
+            variant: result.variant,
+            year: result.year,
+            description: result.description,
+            upload_date : result.upload_date
           }
           return res.render('productAdd',{product:productEdit})
         }
       )
-  },
-  update:(req,res)=>{
-    let productUpdate = req.body;
-    let id = req.params.id;
-    producto.update(
-      {
-        nombre: productUpdate.nombre,
-        release_date: productUpdate.fecha,
-        descripcion: productUpdate.descripcion,
-        genre_id: productUpdate.genre_id,
-      },
-      {
-        where:[
-          {id:id}
-        ]
-      }
-    )
-    .then((result)=>{
-      return res.redirect("/")
-    })
   },
   destroy:(req,res)=>{
     let productABorrar = req.params.id;

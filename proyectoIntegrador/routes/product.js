@@ -29,8 +29,6 @@ router.post('/productAdd', upload.single('image') ,productsController.store);
 
 router.get('/editindex/:id',productsController.edit);
 
-router.post('/editindex/:id',productsController.update);
-
 router.get('/deleteindex/:id', productsController.destroy);
 
 router.post('/id/:id', productsController.comment);

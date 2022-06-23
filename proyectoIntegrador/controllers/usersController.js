@@ -118,10 +118,10 @@ const usersController = {
     let userUpdate = {
       email: info.email,
       name: info.name,
-      password: info.password,
+     // password: info.passwordEncriptada,
       date: info.date,
       dni: info.dni,
-      //  profile_img: info.profile_img,
+      // profile_img: info.profile_img,
     }
     
     user.update(userUpdate,{

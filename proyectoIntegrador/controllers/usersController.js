@@ -27,7 +27,7 @@ const usersController = {
       }).then((result) => {
         if (result != null) {
           let claveCorrecta = bcrypt.compareSync(info.password, result.password)
-          if (claveCorrecta == true && result.email == info.email) {
+          if (claveCorrecta) {
             req.session.user = result.dataValues //Se guarda en session la informacion del usuario que trae result.
 
             if (req.body.remember != undefined) {

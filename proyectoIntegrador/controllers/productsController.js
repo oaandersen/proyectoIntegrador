@@ -4,7 +4,7 @@ const product = data.Producto;
 const productsController = {
 
   show: (req, res) => {
-   product.findByPk(req.params.id, {include:[{association:"Comment"}], all: true, nested: true}) //all: true, nested: true
+   product.findByPk(req.params.id, {all: true, nested: true}) //all: true, nested: true
 
     .then((result) => {
       console.log(result);

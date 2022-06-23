@@ -29,31 +29,33 @@ const productsController = {
     let info = req.body; //Guardamos los datos
     let errors = {};
 
-    if (info.image == null) {
-      errors.message = "Falta incluir la foto!"
-      res.locals.errors = errors;
-      return res.render('productAdd')
-    } else if (info.brand == null) {
+    
+     if (info.brand == "") {
       errors.message = "Falta incluir la marca!"
       res.locals.errors = errors;
       return res.render('productAdd')
-    } else if (info.model == null) {
+
+    } else if (info.model == "") {
       errors.message = "Falta incluir el modelo!"
       res.locals.errors = errors;
       return res.render('productAdd')
-    } else if (info.variant == null) {
+
+    } else if (info.variant == "") {
       errors.message = "Falta incluir la variante!"
       res.locals.errors = errors;
       return res.render('productAdd')
-    } else if (info.year == null) {
+
+    } else if (info.year == "") {
       errors.message = "Falta incluir el año!"
       res.locals.errors = errors;
       return res.render('productAdd')
-    } else if (info.description == null) {
+
+    } else if (info.description == "") {
       errors.message = "Falta incluir la descripción!"
       res.locals.errors = errors;
       return res.render('productAdd')
-    }
+
+    } else{
 
     let producto = { //creamos el producto
       image: req.file.filename,
@@ -67,7 +69,7 @@ const productsController = {
     product.create(producto)
       .then((result) => {
         return res.redirect("/")
-      })
+      })}
   },
   update: (req, res) => {
     let productoUpdate = req.body;

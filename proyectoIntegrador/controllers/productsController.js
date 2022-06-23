@@ -30,17 +30,22 @@ const productsController = {
       description: info.description,
       upload_date : info.upload_date
     }
+    
     product.create(producto)
       .then((result) => {
       return res.redirect("/")
       })
   },
+  edit:(req,res)=>{
+    res.render('productEdit')
+  },
+
   update:(req,res)=>{
     let productoUpdate = req.body;
     let id = req.params.id;
-    producto.update(
+    product.update(
       {
-        image: req.file.filename,
+       // image: req.file.filename,
         brand: productoUpdate.brand,
         model: productoUpdate.model,
         variant: productoUpdate.variant,
@@ -55,7 +60,7 @@ const productsController = {
       }
     )
     .then((result)=>{
-      return res.redirect("/")
+      return res.redirect("/productEdit")
     })
   },
   destroy:(req,res)=>{

@@ -27,11 +27,14 @@ router.get('/productAdd', productsController.create);
 
 router.post('/productAdd', upload.single('image') ,productsController.store);
 
-router.get('/updateindex/:id',productsController.update);
+router.get('/productEdit',productsController.edit);
 
-router.get('/deleteindex/:id', productsController.destroy);
+router.post('/productEdit',productsController.update);
+
+router.get('/deleteProduct/:id', productsController.destroy);
 
 router.post('/id/:id', productsController.comment);
+
 
 /* GET home page. */
 /* router.get('/id/:id', productsController.product)

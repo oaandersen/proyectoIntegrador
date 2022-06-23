@@ -91,6 +91,17 @@ const usersController = {
             res.locals.errors = errors;
             return res.render('register')
     } else {
+      user.findOne({
+        where: [{
+          email: info.email
+        }]
+      }).then((result) => {
+        if(result != null){
+            errors.message="El email ingresado ya existe!"
+            res.locals.errors = errors;
+            return res.render('register')
+        }
+      })
 
 
       let passEncriptada = bcrypt.hashSync(info.password, 10);

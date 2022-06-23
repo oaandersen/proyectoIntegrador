@@ -22,7 +22,7 @@ const productsController = {
   store: function (req, res) {
     let info = req.body; //Guardamos los datos
     let producto = {//creamos el producto
-      image: info.image,
+      image: req.file.filename,
       brand: info.brand,
       model: info.model,
       variant: info.variant,
@@ -32,7 +32,7 @@ const productsController = {
     }
     product.create(producto)
       .then((result) => {
-        return res.redirect("/")
+      return res.redirect("/")
       })
   },
   edit: (req, res) => {
@@ -49,7 +49,7 @@ const productsController = {
             genre_id: result.genre_id,
             id:id
           }
-          return res.render('productAdd',{product:productAdd})
+          return res.render('productAdd',{product:productEdit})
         }
       )
   },
@@ -98,19 +98,6 @@ const productsController = {
     return res.redirect("/product/id/" + req.params.id)
   })
  },
- 
- /* product: function (req, res) {
-    res.render('product', {
-      comment: data.comentarios
-  }); 
-
-  },
-  productAdd: function (req, res) {
-    res.render('productAdd', {
-      usuario: data.usuario
-    });
-  },
-*/
 };
 
 

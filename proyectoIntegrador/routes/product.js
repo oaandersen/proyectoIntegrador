@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-/* Requerir modulos de multer y path */
+
 let multer = require('multer');
 let path = require('path');
 
@@ -8,7 +8,7 @@ let path = require('path');
 
 let storage = multer.diskStorage({
     destination : function(req, file, cb) {
-        cb(null, path.join(__dirname, '../public/images/users'))
+        cb(null, path.join(__dirname, '../public/images/products'))
     },
     filename : function(req, file, cb) {
       
@@ -25,7 +25,7 @@ router.get('/id/:id', productsController.show);
 
 router.get('/productAdd', productsController.create);
 
-router.post('/productAdd', productsController.store);
+router.post('/productAdd', upload.single('image') ,productsController.store);
 
 router.get('/editindex/:id',productsController.edit);
 
@@ -34,6 +34,7 @@ router.post('/editindex/:id',productsController.update);
 router.get('/deleteindex/:id', productsController.destroy);
 
 router.post('/id/:id', productsController.comment);
+
 /* GET home page. */
 /* router.get('/id/:id', productsController.product)
 

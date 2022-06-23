@@ -25,7 +25,7 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					<div>
 
-						<a href="/product/id/<%= producto.id %> "><img class="product-detail-img" src="<%= producto.image %> "</a>
+						<a href="/product/id/<%= producto.id %> "><img class="product-detail-img" src="/images/products/<%= producto.image %> "</a>
 						<h2 class="product-detail-info">Brand: <%= producto.brand %></h2>
 						<h2 class="product-detail-info">Model: <%= producto.model %></h2></a>
 						<h2 class="product-detail-info">Variant: <%= producto.variant %></h2>
@@ -39,7 +39,7 @@
 					<% for( let i = 0; i <  comment.length; i++ ) { %>
 						<section class="comments">
 							<article>
-								<img src="<%= user.imgPerfil %>" alt="">
+								<img src="/images/users/<%=locals.user.profile_img %>" alt=""> 
 								<div class="data">
 									<p class="user">
 										<strong> <a href="/users/profile"><%= user.name %>: </a> </strong>

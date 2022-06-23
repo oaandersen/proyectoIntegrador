@@ -22,6 +22,7 @@ const indexController = {
       });
   },
   search: (req, res) => {
+    let search = req.query.search;
     producto.findAll({
         include: [{
             association: 'User'
@@ -32,12 +33,12 @@ const indexController = {
         ],
         where: [{
             name: {
-              [op.like]: '%' + req.query.search + '%'
+              [op.like]: '%' + search + '%'
             }
           },
           {
             description: {
-              [op.like]: '%' + req.query.search + '%'
+              [op.like]: '%' + search + '%'
             }
           }
         ]

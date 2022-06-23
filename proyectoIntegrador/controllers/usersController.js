@@ -10,13 +10,18 @@ const usersController = {
   procesarLogin: (req, res) => {
 
     let info = req.body;
-
+    let errors = {};
+    
 
     if (info.email == "") {
-      res.send("El campo de email esta vacio!")
-
+      errors.message="El campo email esta vacio!"
+      res.locals.errors = errors;
+      return res.render('login')
+        
     } else if (info.password == "") {
-      res.send("El campo de la contraseña esta vacio!")
+      errors.message="El campo contraseña esta vacio!"
+      res.locals.errors = errors;
+      return res.render('login')
 
     } else {
 
@@ -39,12 +44,16 @@ const usersController = {
 
           }
           if (claveCorrecta == false) {
-            res.send("La contraseña ingresada es incorrecta!")
+            errors.message="La contraseña ingresada es incorrecta!"
+            res.locals.errors = errors;
+            return res.render('login')
 
           }
         }
         if (result == null)
-          res.send(`El email ${info.email} no esta registrado!`)
+        errors.message=`El email ${info.email} no esta registrado!`
+        res.locals.errors = errors;
+        return res.render('login')
 
       });
       // return res.redirect("/")
@@ -60,14 +69,39 @@ const usersController = {
   procesarRegister: (req, res) => {
 
     let info = req.body; //Captura todos los inputs guardados en el formulario
-
+    let errors = {}
     if (info.name == "") {
-      res.send("El nombre esta vacio!")
+            errors.message="El nombre de usuario es obligatorio!"
+            res.locals.errors = errors;
+            return res.render('register')
     } else if (info.email == "") {
-      res.send("El email esta vacio!")
+            errors.message="El campo email es obligatorio!"
+            res.locals.errors = errors;
+            return res.render('register')
     } else if (info.password == "") {
-      res.send("La contraseña esta vacia!")
+            errors.message="La contraseña es obligatoria!"
+            res.locals.errors = errors;
+            return res.render('register')
+    } else if (info.date == "") {
+            errors.message="La fecha de nacimiento es obligatoria!"
+            res.locals.errors = errors;
+            return res.render('register')
+    } else if (info.dni == "") {
+            errors.message="El documento es obligatorio!"
+            res.locals.errors = errors;
+            return res.render('register')
     } else {
+      user.findOne({
+        where: [{
+          email: info.email
+        }]
+      }).then((result) => {
+        if(result != null){
+            errors.message="El email ingresado ya existe!"
+            res.locals.errors = errors;
+            return res.render('register')
+        }
+      })
 
 
       let passEncriptada = bcrypt.hashSync(info.password, 10);
@@ -92,7 +126,7 @@ const usersController = {
         .then((result) => {
           return res.redirect("/users/login")
         })
-
+        .catch(error => console.log (error))
     }
   },
   logout: (req, res) => {
@@ -132,7 +166,7 @@ const usersController = {
       .then((result) => {
         return res.redirect('/users/profile')
       })
-
+      .catch(error => console.log (error))
   }
 }
 

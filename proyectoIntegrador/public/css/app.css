@@ -600,3 +600,10 @@ textarea.form-input {
 .bienvenidoUser{
   font-size: 30px;
 }
+
+/* ERRORS */
+.errors{
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+}

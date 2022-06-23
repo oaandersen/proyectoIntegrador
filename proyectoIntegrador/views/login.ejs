@@ -34,6 +34,9 @@
 						<input id="remember" class="input-users" type="checkbox" name="remember">
 					</div>
 					<button class="div-users, botonesVarios" type="text" class="submit">Submit</button>
+					<% if(locals.errors){ %>
+							<p class="errors">	<%= errors.message %></p>
+					<%}%>
 				</form>
 			<!--	<input type="submit" value="Login" class="div-users, botonesVarios"> -->
 

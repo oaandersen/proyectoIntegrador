@@ -4,85 +4,116 @@ const product = data.Producto;
 const productsController = {
 
   show: (req, res) => {
-   product.findByPk(req.params.id, {include:[{association:"Comment"}], all: true, nested: true}) //all: true, nested: true
+    product.findByPk(req.params.id, {
+        include: [{
+          association: "Comment"
+        }],
+        all: true,
+        nested: true
+      }) //all: true, nested: true
 
-    .then((result) => {
-      console.log(result);
-      return res.render("product", {
-        producto: result,
-        comment: result.Comment,
-      }); 
-    });
+      .then((result) => {
+        console.log(result);
+        return res.render("product", {
+          producto: result,
+          comment: result.Comment,
+        });
+      });
   },
- 
+
   create: (req, res) => {
     return res.render('productAdd');
-  
+
   },
   store: function (req, res) {
     let info = req.body; //Guardamos los datos
-    let producto = {//creamos el producto
+    let errors = {};
+
+    if (info.image == null) {
+      errors.message = "Falta incluir la foto!"
+      res.locals.errors = errors;
+      return res.render('productAdd')
+    } else if (info.brand == null) {
+      errors.message = "Falta incluir la marca!"
+      res.locals.errors = errors;
+      return res.render('productAdd')
+    } else if (info.model == null) {
+      errors.message = "Falta incluir el modelo!"
+      res.locals.errors = errors;
+      return res.render('productAdd')
+    } else if (info.variant == null) {
+      errors.message = "Falta incluir la variante!"
+      res.locals.errors = errors;
+      return res.render('productAdd')
+    } else if (info.year == null) {
+      errors.message = "Falta incluir el año!"
+      res.locals.errors = errors;
+      return res.render('productAdd')
+    } else if (info.description == null) {
+      errors.message = "Falta incluir la descripción!"
+      res.locals.errors = errors;
+      return res.render('productAdd')
+    }
+
+    let producto = { //creamos el producto
       image: req.file.filename,
       brand: info.brand,
       model: info.model,
       variant: info.variant,
       year: info.year,
       description: info.description,
-      upload_date : info.upload_date
+      upload_date: info.upload_date
     }
     product.create(producto)
       .then((result) => {
-      return res.redirect("/")
+        return res.redirect("/")
       })
   },
-  update:(req,res)=>{
+  update: (req, res) => {
     let productoUpdate = req.body;
     let id = req.params.id;
-    producto.update(
-      {
+    producto.update({
         image: req.file.filename,
         brand: productoUpdate.brand,
         model: productoUpdate.model,
         variant: productoUpdate.variant,
         year: productoUpdate.year,
         description: productoUpdate.description,
-        upload_date : productoUpdate.upload_date,
-            },
-      {
-        where:[
-          {id:id}
-        ]
-      }
-    )
-    .then((result)=>{
-      return res.redirect("/")
-    })
+        upload_date: productoUpdate.upload_date,
+      }, {
+        where: [{
+          id: id
+        }]
+      })
+      .then((result) => {
+        return res.redirect("/")
+      })
   },
-  destroy:(req,res)=>{
+  destroy: (req, res) => {
     let productABorrar = req.params.id;
-    product.destroy(
-      {
-        where:[{id:productABorrar}]
-      }
-    )
-    .then((result)=>{
-      return res.redirect("/")
-    })
+    product.destroy({
+        where: [{
+          id: productABorrar
+        }]
+      })
+      .then((result) => {
+        return res.redirect("/")
+      })
   },
- comment: (req,res)=>{
-  let comment = {
-    cm_user_id: req.session.user.id,
-    producto_id: req.params.id, 
-    comment: req.body.comment, 
-  };
-  
-  data.Comment.create(
-    comment
-  )
-  .then((result) => {
-    return res.redirect("/product/id/" + req.params.id)
-  })
- },
+  comment: (req, res) => {
+    let comment = {
+      cm_user_id: req.session.user.id,
+      producto_id: req.params.id,
+      comment: req.body.comment,
+    };
+
+    data.Comment.create(
+        comment
+      )
+      .then((result) => {
+        return res.redirect("/product/id/" + req.params.id)
+      })
+  },
 };
 
 

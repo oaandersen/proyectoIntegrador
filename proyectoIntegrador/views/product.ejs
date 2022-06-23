@@ -36,6 +36,9 @@
 
 				</article> 
 				<div class="col-12 col-lg-4">
+					<% if(locals.user == undefined) {%>
+						<p class="commentsDeslogueado">Debes estar logueado para ver los comentarios!</p>
+						<% } else{%> 
 					<% for( let i = 0; i <  comment.length; i++ ) { %>
 						<section class="comments">
 							<article>
@@ -47,6 +50,8 @@
 								</div>
 							</article>
 							<% } %>
+							<% } %>
+							
 					</section>
 					<form class="form" action="/product/id/<%= producto.id %>" method="POST">
 						<input name="comment" class="form-input" type="text" value="" placeholder="Agregar comentario">

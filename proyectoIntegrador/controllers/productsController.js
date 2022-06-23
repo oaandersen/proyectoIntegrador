@@ -35,23 +35,28 @@ const productsController = {
       return res.redirect("/")
       })
   },
-  edit: (req, res) => {
+  update:(req,res)=>{
+    let productoUpdate = req.body;
     let id = req.params.id;
-    producto.findByPk(id)
-      .then(
-        (result) => {
-          let productEdit = {
-            image: req.file.filename,
-            brand: result.brand,
-            model: result.model,
-            variant: result.variant,
-            year: result.year,
-            description: result.description,
-            upload_date : result.upload_date
-          }
-          return res.render('productAdd',{product:productEdit})
-        }
-      )
+    producto.update(
+      {
+        image: req.file.filename,
+        brand: productoUpdate.brand,
+        model: productoUpdate.model,
+        variant: productoUpdate.variant,
+        year: productoUpdate.year,
+        description: productoUpdate.description,
+        upload_date : productoUpdate.upload_date,
+            },
+      {
+        where:[
+          {id:id}
+        ]
+      }
+    )
+    .then((result)=>{
+      return res.redirect("/")
+    })
   },
   destroy:(req,res)=>{
     let productABorrar = req.params.id;

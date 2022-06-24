@@ -166,6 +166,7 @@ hr {
   padding: 10px;
   border: 5px solid darkred;
   backdrop-filter: blur(10px);
+  display: list-item;
 
 
 }
@@ -173,15 +174,17 @@ hr {
 .div-users{
   margin: 20px;
   color: white;
+  display: list-item;
 }
-/* 
+
 .label-users{
-  
+  display: list-item;
 }
 .input-users{
-
+  display: list-item;
 }
-*/
+
+
 /*====== Banner ======*/
 .banner {
   background-image: url(../images/Myproject2.png);

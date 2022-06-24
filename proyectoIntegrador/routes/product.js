@@ -27,7 +27,7 @@ router.get('/productAdd', productsController.create);
 
 router.post('/productAdd', upload.single('image') ,productsController.store);
 
-router.get('/productEdit',productsController.edit);
+router.get('/productEdit/:id',productsController.edit);
 
 router.post('/productEdit',productsController.update);
 

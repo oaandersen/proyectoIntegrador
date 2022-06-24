@@ -1,5 +1,17 @@
+const { urlencoded } = require('express');
+const { locals } = require('../app');
 const data = require('../database/models');
 const product = data.Producto;
+
+
+
+
+
+
+
+
+
+
 
 const productsController = {
 
@@ -37,32 +49,59 @@ const productsController = {
       })
   },
   edit:(req,res)=>{
-    res.render('productEdit')
+      req.session.idEdit = req.params.id
+      res.render(`productEdit`)
   },
 
   update:(req,res)=>{
-    let productoUpdate = req.body;
-    let id = req.params.id;
-    product.update(
+    let info = req.body;
+    let errors = {};
+    let idEdit = req.session.idEdit;
+    if (info.brand == ""){
+      errors.message="El campo marca esta vacio!"
+      res.locals.errors = errors;
+      return res.render('productEdit')
+
+    } else if(info.model == ""){
+      errors.message="El campo marca esta vacio!"
+      res.locals.errors = errors;
+      return res.render('productEdit')
+
+    } else if(info.variant == ""){
+      errors.message="El campo variante esta vacio!"
+      res.locals.errors = errors;
+      return res.render('productEdit')
+
+    }else if(info.year == ""){
+      errors.message="El campo del año esta vacio!"
+      res.locals.errors = errors;
+      return res.render('productEdit')
+
+    }else if(info.description == ""){
+      errors.message="El campo de descripción esta vacio!"
+      res.locals.errors = errors;
+      return res.render('productEdit')
+    }else{
+      
+      product.update(
       {
-       // image: req.file.filename,
-        brand: productoUpdate.brand,
-        model: productoUpdate.model,
-        variant: productoUpdate.variant,
-        year: productoUpdate.year,
-        description: productoUpdate.description,
-        upload_date : productoUpdate.upload_date,
+        brand: info.brand,
+        model: info.model,
+        variant: info.variant,
+        year: info.year,
+        description: info.description,
+        upload_date : info.upload_date,
             },
       {
         where:[
-          {id:id}
+          {id: idEdit}
         ]
       }
     )
     .then((result)=>{
-      return res.redirect("/productEdit")
+      return res.redirect("/")
     })
-  },
+  }},
   destroy:(req,res)=>{
     let productABorrar = req.params.id;
     product.destroy(

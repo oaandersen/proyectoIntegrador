@@ -16,11 +16,17 @@ module.exports = {
     "operatorsAliases": false
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "273784",
+    "password": "ProyectoIntegrador",
+    "database": "proyecto-integrador_db",
+    "host": "mysql-proyecto-integrador.alwaysdata.net",
     "dialect": "mysql",
     "operatorsAliases": false
   }
 }
+
+// Name: Proyecto-Integrador
+// Password: ProyectoIntegrador
+
+// 273784
+// ProyectoIntegrador

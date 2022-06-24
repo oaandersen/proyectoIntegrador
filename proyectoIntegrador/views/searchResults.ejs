@@ -31,18 +31,17 @@
 				<a href="/product/product/<%= listaProduct[i].id %> ">
 					<div class="col-12 col-sm-6 col-lg-3">
 						<section class="product-box">
-							<a href="/product/productAdd/<%= listaProduct[i].id %>">Modificar</a>
-							| <a href="/product/deleteProduct/<%= listaProduct[i].id %>">Eliminar</a>
+							<a href="/product/productEdit/<%= listaProduct[i].id %>">Modificar</a>
+							<a href="/product/deleteProduct/<%= listaProduct[i].id %>">Eliminar</a>
 							<figure class="product-box_image">
 								<a href="/product/id/<%= listaProduct[i].id %> "><img class="product-img"
-										src="<%= listaProduct[i].image %> " </a> </figure> <article
+										src="/images/products/<%= listaProduct[i].image %> " </a> </figure> <article
 										class="product-box_data">
 									<a href="/product/id/<%= listaProduct[i].id %> ">
-										<h2><%= listaProduct[i].brand + ' ' + listaProduct[i].model + ' ' + listaProduct[i].variant %>
-										</h2>
-									</a>
-									<p><a href="/product/id/<%= listaProduct[i].id %> "><%= listaProduct[i].year + ' - ' + listaProduct[i].description %>
-									</p>
+										<h2><%= listaProduct[i].brand  %> </h2> 
+										<p><%=listaProduct[i].description%></p>
+
+
 								</a>
 								<p></p>
 								</article>

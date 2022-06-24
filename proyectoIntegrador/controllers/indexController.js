@@ -32,7 +32,7 @@ const indexController = {
           }
         ],
         where: [{
-            name: {
+            brand: {
               [op.like]: '%' + search + '%'
             }
           },
@@ -44,7 +44,7 @@ const indexController = {
         ]
       })
       .then((result) => {
-        return res.render('search', {
+        return res.render('searchResults', {
           listaProduct: result,
           contador: req.session.contador
         })

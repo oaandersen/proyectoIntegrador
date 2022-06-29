@@ -1,5 +1,3 @@
-const { urlencoded } = require('express');
-const { locals } = require('../app');
 const data = require('../database/models');
 const product = data.Producto;
 

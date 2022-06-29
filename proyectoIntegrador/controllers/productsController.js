@@ -2,15 +2,6 @@ const data = require('../database/models');
 const product = data.Producto;
 
 
-
-
-
-
-
-
-
-
-
 const productsController = {
 
   show: (req, res) => {

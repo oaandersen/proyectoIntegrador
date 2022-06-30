@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+
+<%- include('./partials/head')  %>
+
+<body>
+	<!-- Header -->
+	<%	if (locals.user != undefined) {	%>
+	<%- include('./partials/headerLogeado')  %>
+	<% } %>
+	<% if(locals.user == undefined)	{ %>
+	<%- include('./partials/headerDeslogeado')  %>
+	<%	}	%>
+	<!-- /Header -->
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Agregar productos</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<div class="productAdd">
+				<h2 class="col-12">
+					<form class="formulario-productos" action="/product/productAdd" method="POST" enctype="multipart/form-data">
+				<h2>
+					<label class="labelProductAdd" for="image">Imagen del auto:</label>
+					<input id="image" type="file" name="image"	placeholder="image">
+				</h2>
+				<h2 class="col-12">
+					<label class="labelProductAdd" for="brand">Marca:</label>
+					<input id="brand" type="text" name="brand" placeholder="brand">
+				</h2>
+				<h2 class="col-12">
+					<label class="labelProductAdd" for="model">Modelo:</label>
+					<input id="model" type="text" name="model" placeholder="model">
+				</h2>
+				<h2 class="col-12">
+					<label class="labelProductAdd" for="variant">Variante:</label>
+					<input id="variant" type="text" name="variant" placeholder="variant">
+				</h2>
+				<h2 class="col-12">
+					<label class="labelProductAdd" for="year">Año:</label>
+					<input id="year" type="text" name="year" placeholder="year">
+				</h2>
+				<h2 class="col-12">
+					<label class="labelProductAdd" for="description">Descripción:</label>
+					<input id="description" type="text" name="description" placeholder="description">
+				</h2>
+				<h2 class="col-12">
+					<label class="labelProductAdd" for="upload_date">Fecha:</label>
+					<input id="upload_date" type="text" name="upload_date" placeholder="upload_date">
+				</h2>
+				<button class="div-users, botonesVarios" type="text" class="submit">Subir</button>
+				<% if(locals.errors){ %>
+					<p class="errors">	<%= errors.message %></p>
+			<%}%>
+				</form>
+				</h2>
+			</div>
+
+			<!-- footer -->
+			<%- include('./partials/footer')  %>
+			<!-- /footer -->
+</body>
+
+</html>

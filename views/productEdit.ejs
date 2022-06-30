@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+
+<%- include('./partials/head')  %>
+
+<body>
+	<!-- Header -->
+	<%	if (locals.user != undefined) {	%>
+		<%- include('./partials/headerLogeado')  %>
+		<% } %> 
+		<% if(locals.user == undefined)	{ %>
+			<%- include('./partials/headerDeslogeado')  %>
+		<%	}	%>
+	<!-- /Header -->
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Editar mi perfil</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<h2 class="div-productEdit"> EDITAR PRODUCTO
+				<form class="formulario-users" action="/product/productEdit" method="POST">
+                    <h2>
+                        <label class="labelProductEdit" for="image">Imagen del auto:</label>
+                        <input id="image" type="file" name="image"	placeholder="image">
+                    </h2>
+                    <h2 class="div-productEdit">
+                        <label class="labelProductEdit" for="brand">Marca:</label>
+                        <input id="brand" type="text" name="brand" placeholder="brand">
+                    </h2>
+                    <h2 class="div-productEdit">
+                        <label class="labelProductEdit" for="model">Modelo:</label>
+                        <input id="model" type="text" name="model" placeholder="model">
+                    </h2>
+                    <h2 class="div-productEdit">
+                        <label class="labelProductEdit" for="variant">Variante:</label>
+                        <input id="variant" type="text" name="variant" placeholder="variant">
+                    </h2>
+                    <h2 class="div-productEdit">
+                        <label class="labelProductEdit" for="year">Año:</label>
+                        <input id="year" type="text" name="year" placeholder="year">
+                    </h2>
+                    <h2 class="div-productEdit">
+                        <label class="labelProductEdit" for="description">Descripción:</label>
+                        <input id="description" type="text" name="description" placeholder="description">
+                    </h2>
+                    <h2 class="div-productEdit">
+                        <label class="labelProductEdit" for="upload_date">Fecha:</label>
+                        <input id="upload_date" type="text" name="upload_date" placeholder="upload_date">
+                    </h2>
+                    <button class="div-productEdit, botonesVarios" type="text" class="submit">Subir</button>
+                    <% if(locals.errors){ %>
+                        <p class="errors">	<%= errors.message %></p>
+                <%}%>
+                    </form>
+			</h2>
+
+
+			<!-- footer -->
+			<%- include('./partials/footer')  %>
+			<!-- /footer -->
+</body>
+
+</html>
